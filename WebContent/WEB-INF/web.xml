@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MVCDemo</display-name>
+   <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>IndexServlet</servlet-name>
+	<servlet-class>controller.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/IndexServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>Index</servlet-name>
+	<jsp-file>/views/restoran/index.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Index</servlet-name>
+    <url-pattern>/Index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>Header</servlet-name>
+	<jsp-file>/views/restoran/header.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Header</servlet-name>
+    <url-pattern>/Header</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>Sidebar</servlet-name>
+	<jsp-file>/views/restoran/sidebar.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Sidebar</servlet-name>
+    <url-pattern>/Sidebar</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>Footer</servlet-name>
+	<jsp-file>/views/restoran/footer.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Footer</servlet-name>
+    <url-pattern>/Footer</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>PesananServlet</servlet-name>
+	<servlet-class>controller.PesananServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PesananServlet</servlet-name>
+    <url-pattern>/PesananServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
