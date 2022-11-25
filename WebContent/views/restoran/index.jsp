@@ -445,8 +445,17 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Advanced Table</p>
-                  <div class="row">
+                <div class="row" style="margin-bottom: 20px;">
+                	<div class="col-md-11">
+                		<p class="card-title">Data Pesanan</p>
+                	</div>
+                	<div class="col-md-1">
+                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+                        <i class="fa fa-add" ></i>
+                      	</button></a>
+                	</div>
+                </div>
+                 <div class="row">
                     <div class="col-12">
                       <div class="table-responsive">
                         <table id="tabelPesanan" class="display expandable-table" style="width:100%">
@@ -460,6 +469,10 @@
                           	<tr>
                           		<td>1</td>
                           		<td>PS001</td>
+                          	</tr>
+                          	<tr>
+                          		<td>2</td>
+                          		<td>PS002</td>
                           	</tr>
                           </tbody>
                       </table>
