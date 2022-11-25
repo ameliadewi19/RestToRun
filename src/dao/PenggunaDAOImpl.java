@@ -55,4 +55,80 @@ public class PenggunaDAOImpl implements PenggunaDAO {
 		return false;
 	}
 
+	@Override
+	public String getJenis(String email) {
+		String hasil = "";
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement jenis = connection.prepareCall("{? = call getJenisUser(?)}");
+			
+			//register out parameter
+			jenis.registerOutParameter(1, Types.VARCHAR);
+			
+			//set value to in parameter
+			jenis.setString(2, email);
+			
+			jenis.executeUpdate();
+			hasil = jenis.getString(1);
+			System.out.println("Hasil:" + hasil);
+				
+			connection.close();  
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+		
+		return hasil;
+	}
+	
+	public String getNamaUser(String email) {
+		String hasil = "";
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement nama = connection.prepareCall("{? = call getNama(?)}");
+			
+			//register out parameter
+			nama.registerOutParameter(1, Types.VARCHAR);
+			
+			//set value to in parameter
+			nama.setString(2, email);
+			
+			nama.executeUpdate();
+			hasil = nama.getString(1);
+			System.out.println("Hasil nama: " + nama);
+				
+			connection.close();  
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+		
+		return hasil;
+	}
 }

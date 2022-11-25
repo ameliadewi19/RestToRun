@@ -46,6 +46,10 @@ public class LoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String jenisUser = penggunaDAO.getJenis(email);
+		String namaUser = penggunaDAO.getNamaUser(email);
+		
+		System.out.println("Hasil Jenis: " + jenisUser);
 
 		String err = "";
 		if (email.equals("") || password.equals("")) {
@@ -65,12 +69,15 @@ public class LoginServlet extends HttpServlet {
 			if (err.length() == 0) {
 				HttpSession session = request.getSession();
 				session.setAttribute("email", email);
+				session.setAttribute("jenisUser", jenisUser);
+				session.setAttribute("namaUser", namaUser);
 				penggunaDAO.login(email, password);
-				Cookie loginCookie = new Cookie("email",email);
+				
+				Cookie loginCookie = new Cookie("email", email);
 	            //setting cookie to expiry in 30 mins
 	            loginCookie.setMaxAge(30*60);
 	            response.addCookie(loginCookie);
-	            response.sendRedirect("/RestoranWeb/Index");
+	            response.sendRedirect("views/restoran/index.jsp");
 				url = "/Index";
 			} else {
 				url = "/login.jsp";

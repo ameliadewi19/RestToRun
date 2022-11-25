@@ -6,7 +6,7 @@
   <!-- icon online -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../assets/restoran/vendors/feather/feather.css">
+  <link rel="stylesheet" href=".assets/restoran/vendors/feather/feather.css">
   <link rel="stylesheet" href="../../assets/restoran/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../assets/restoran/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->

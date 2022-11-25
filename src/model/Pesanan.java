@@ -1,13 +1,15 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Pesanan {
-	private char id_pesanan;
+	private String id_pesanan;
 	private String status_pesanan;
-	private int waktu;
-	private char id_pelanggan;
+	private Timestamp waktu;
+	private String id_pelanggan;
 	private int no_antrian;
 	
-	public Pesanan(char id_pesanan, String status_pesanan, int waktu, char id_pelanggan, int no_antrian) {
+	public Pesanan(String id_pesanan, String status_pesanan, Timestamp waktu, String id_pelanggan, int no_antrian) {
 		super();
 		this.id_pesanan = id_pesanan;
 		this.status_pesanan = status_pesanan;
@@ -16,11 +18,11 @@ public class Pesanan {
 		this.no_antrian = no_antrian;
 	}
 
-	public char getId_pesanan() {
+	public String getId_pesanan() {
 		return id_pesanan;
 	}
 
-	public void setId_pesanan(char id_pesanan) {
+	public void setId_pesanan(String id_pesanan) {
 		this.id_pesanan = id_pesanan;
 	}
 
@@ -32,19 +34,19 @@ public class Pesanan {
 		this.status_pesanan = status_pesanan;
 	}
 
-	public int getWaktu() {
+	public Timestamp getWaktu() {
 		return waktu;
 	}
 
-	public void setWaktu(int waktu) {
+	public void setWaktu(Timestamp waktu) {
 		this.waktu = waktu;
 	}
 
-	public char getId_pelanggan() {
+	public String getId_pelanggan() {
 		return id_pelanggan;
 	}
 
-	public void setId_pelanggan(char id_pelanggan) {
+	public void setId_pelanggan(String id_pelanggan) {
 		this.id_pelanggan = id_pelanggan;
 	}
 

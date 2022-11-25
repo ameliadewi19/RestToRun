@@ -106,7 +106,7 @@
                     </li>
                 </div>
                 <li class="nav-item">
-                    <a type="button" class="btn btn-dark" href="views/login.jsp">Log in</a>
+                    <a type="button" class="btn btn-dark" href="login.jsp">Log in</a>
                 </li>
             </ul>
         </div>

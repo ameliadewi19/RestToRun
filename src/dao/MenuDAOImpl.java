@@ -25,14 +25,13 @@ public class MenuDAOImpl implements MenuDAO {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createMenu = connection.prepareCall("{call create_menu(?,?,?,?,?,?)}");
+			CallableStatement createMenu = connection.prepareCall("{call create_menu(?,?,?,?)}");
 			
 			//set value to in parameter
-			createMenu.setString(1, m.getId_jenis());
-			createMenu.setString(2, m.getNama_menu());	
-			createMenu.setInt(3, m.getHarga());
-			createMenu.setInt(4, m.getEstimasi_waktu());
-			createMenu.setInt(5, m.getStok());
+			createMenu.setString(1, m.getNama_menu());	
+			createMenu.setInt(2, m.getHarga());
+			createMenu.setInt(3, m.getEstimasi_waktu());
+			createMenu.setInt(4, m.getStok());
 			
 			createMenu.executeUpdate();			
 			connection.close();  

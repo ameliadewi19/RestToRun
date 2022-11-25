@@ -14,4 +14,7 @@ public interface PenggunaDAO {
 //	
 //	public User getUser(String username);
 
+ 	public String getJenis(String email);
+ 	
+ 	public String getNamaUser(String email);
 }

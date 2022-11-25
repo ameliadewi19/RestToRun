@@ -66,4 +66,13 @@
     <url-pattern>/PesananServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	<servlet-name>Pesanan</servlet-name>
+	<jsp-file>/views/restoran/pesanan/pesanan.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Pesanan</servlet-name>
+    <url-pattern>/Pesanan</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
