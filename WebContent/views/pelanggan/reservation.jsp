@@ -87,7 +87,10 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/about.html">About</a>
+                        <a class="nav-link" href="about.jsp">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.jsp">Cart</a>
                     </li>
                 </div>
             </ul>
@@ -100,10 +103,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="views/menu.jsp">Menu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="views/team.jsp">Team</a>
-                    </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="views/reservation.jsp">Reservation</a>
                     </li>

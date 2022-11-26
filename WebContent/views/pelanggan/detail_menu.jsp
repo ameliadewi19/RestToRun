@@ -94,7 +94,10 @@
                               <a class="nav-link" href="../index.jsp">Home</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="views/about.html">About</a>
+                              <a class="nav-link" href="about.jsp">About</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="cart.jsp">Cart</a>
                           </li>
                       </div>
                   </ul>
