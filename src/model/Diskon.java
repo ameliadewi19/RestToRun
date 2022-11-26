@@ -4,14 +4,14 @@ public class Diskon {
 	private int potongan;
 	private String tanggal_mulai;
 	private String tanggal_akhir;
-	private char id_menu;
+	private String menu;
 	
-	public Diskon(int potongan, String tanggal_mulai, String tanggal_akhir, char id_menu) {
+	public Diskon(int potongan, String tanggal_mulai, String tanggal_akhir, String menu_id_menu) {
 		super();
 		this.potongan = potongan;
 		this.tanggal_mulai = tanggal_mulai;
 		this.tanggal_akhir = tanggal_akhir;
-		this.id_menu = id_menu;
+		this.menu = menu_id_menu;
 	}
 
 	public int getPotongan() {
@@ -38,13 +38,11 @@ public class Diskon {
 		this.tanggal_akhir = tanggal_akhir;
 	}
 
-	public char getId_menu() {
-		return id_menu;
+	public Menu getMenu() {
+		return menu;
 	}
 
-	public void setId_menu(char id_menu) {
-		this.id_menu = id_menu;
-	}
-	
-	
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}	
 }

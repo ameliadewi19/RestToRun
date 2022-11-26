@@ -1,27 +1,16 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BahanBaku"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.BahanDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
-  <!-- icon online -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
-</head>
+<!-- header -->
+<jsp:include page="../headerDua.jsp"/>
+<!------------>
 <meta charset="ISO-8859-1">
 <body>
   <div class="container-scroller">
@@ -452,19 +441,80 @@
               </div>
             </div>
           </div> 
+        
+        <%
+			BahanDAOImpl bahanDAO = new BahanDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
         <!-- content-wrapper ends -->
+        <div class="main-panel">
+        <div class="content-wrapper">
+	        <div class="row">
+	            <div class="col-md-12 grid-margin stretch-card">
+	              <div class="card">
+	                <div class="card-body">
+	                <div class="row" style="margin-bottom: 20px;">
+	                	<div class="col-md-11">
+	                		<p class="card-title">Data Bahan</p>
+	                	</div>
+	                	<div class="col-md-1">
+	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                        <i class="fa fa-add" ></i>
+	                      	</button></a>
+	                	</div>
+	                </div>
+	                 <div class="row">
+	                    <div class="col-12">
+	                      <div class="table-responsive">
+	                        <table id="tabelBahan" class="display expandable-table" style="width:100%">
+	                          <thead>
+		                        <tr>
+		                          <th>Id Bahan Baku</th>
+		                          <th>Nama Bahan</th>
+		                          <th>Stok</th>
+		                          <th>Action</th>
+		                        </tr>
+		                      </thead>
+		                      <tbody>
+		                      <%	
+		                      		for (BahanBaku b : bahanDAO.getList()) {
+							  %>
+								<pg:item>
+		                        <tr>
+		                          <td><%=b.getId_bahan()%></td>
+		                          <td><%=b.getNama_bahan()%></td>
+		                          <td><%=b.getStok()%></td>
+		                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
+		                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-edit" ></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-trash" ></i></a></td>
+		                        </tr>
+		                        </pg:item>
+								<%
+									}
+										
+								%>
+		                      </tbody>
+	                      </table>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
         <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright � 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-        </footer>
+        <!-- footer -->
+		<jsp:include page="/Footer"/>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+  </div>
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
@@ -481,6 +531,11 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
+  <script>
+    $(document).ready(function() {
+      $('#tabelBahan').DataTable();
+  } );
+  </script>
 </body>
 
 </html>

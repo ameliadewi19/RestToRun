@@ -10,6 +10,8 @@
 
 <!-- header -->
 <jsp:include page="../headerDua.jsp"/>
+<!------------>
+
 <meta charset="ISO-8859-1">
 <body>
   <div class="container-scroller">
@@ -310,7 +312,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../bahan/baku.jsp" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" href="../bahan/bahan.jsp">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
@@ -352,63 +354,75 @@
       </nav>
 	
 		<%
-					PesananDAOImpl pesananDAO = new PesananDAOImpl();
+			PesananDAOImpl pesananDAO = new PesananDAOImpl();
 	
-						NumberFormat nf = NumberFormat.getInstance();
-						nf.setMinimumFractionDigits(0);
-				%>
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Tabel Pesanan</h4>
-                  <div class="table-responsive">
-                    <table class="table" id="tabelPesan">
-                      <thead>
-                        <tr>
-                          <th>Nama</th>
-                          <th>Id Pesanan</th>
-                          <th>Tanggal</th>
-                          <th>Koki</th>
-                          <th>Pelayan</th>
-                          <th>Status</th>
-                          <th>Proses</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <%	for (Pesanan p : pesananDAO.getList()) {
-						%>
-						<pg:item>
-                        <tr>
-                          <td>Nama</td>
-                          <td><%=p.getId_pesanan()%></td>
-                          <td><%=p.getWaktu()%></td>
-                          <td>Koki</td>
-                          <td>Pelayan</td>
-                          <td><%=p.getStatus_pesanan()%></td>
-                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
-                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>
-                          <td><a class="" href="#"><i class="fa fa-edit" ></i></a></td>
-                          <td><a class="" href="#"><i class="fa fa-trash" ></i></a></td>
-                        </tr>
-                        </pg:item>
-						<%
-							}
-								
-						%>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>            
-        
-        <!-- content-wrapper ends -->
+	        <div class="row">
+	            <div class="col-md-12 grid-margin stretch-card">
+	              <div class="card">
+	                <div class="card-body">
+	                <div class="row" style="margin-bottom: 20px;">
+	                	<div class="col-md-11">
+	                		<p class="card-title">Data Pesanan</p>
+	                	</div>
+	                	<div class="col-md-1">
+	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                        <i class="fa fa-add" ></i>
+	                      	</button></a>
+	                	</div>
+	                </div>
+	                 <div class="row">
+	                    <div class="col-12">
+	                      <div class="table-responsive">
+	                        <table id="tabelPesan" class="display expandable-table" style="width:100%">
+	                          <thead>
+		                        <tr>
+		                          <th>Nama</th>
+		                          <th>Id Pesanan</th>
+		                          <th>Tanggal</th>
+		                          <th>Koki</th>
+		                          <th>Pelayan</th>
+		                          <th>Status</th>
+		                          <th>Proses</th>
+		                          <th>Action</th>
+		                        </tr>
+		                      </thead>
+		                      <tbody>
+		                      <%	for (Pesanan p : pesananDAO.getList()) {
+								%>
+								<pg:item>
+		                        <tr>
+		                          <td>Nama</td>
+		                          <td><%=p.getId_pesanan()%></td>
+		                          <td><%=p.getWaktu()%></td>
+		                          <td>Koki</td>
+		                          <td>Pelayan</td>
+		                          <td><%=p.getStatus_pesanan()%></td>
+		                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
+		                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-edit" ></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-trash" ></i></a></td>
+		                        </tr>
+		                        </pg:item>
+								<%
+									}
+										
+								%>
+		                      </tbody>
+	                      </table>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
         <!-- footer -->
 		<jsp:include page="/Footer"/>
         

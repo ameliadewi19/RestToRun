@@ -1,11 +1,17 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Pesanan"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.PesananDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <jsp:include page="../headerDua.jsp"/>
-</head>
+<!-- header -->
+<jsp:include page="../headerDua.jsp"/>
+<!------------>
+
 <meta charset="ISO-8859-1">
 <body>
   <div class="container-scroller">
