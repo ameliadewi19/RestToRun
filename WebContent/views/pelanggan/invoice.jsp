@@ -11,24 +11,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	 <!-- Favicons -->
-	 <link href="../assets/img/favicon.png" rel="icon">
-	 <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+	 <link href="../../assets/pelanggan/img/favicon.png" rel="icon">
+	 <link href="../../assets/pelanggan/img/apple-touch-icon.png" rel="apple-touch-icon">
 	
 	 <!-- Google Fonts -->
 	 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	
 	 <!-- Vendor CSS Files -->
-	 <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-	 <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-	 <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	 <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	 <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	 <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-	 <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/animate.css/animate.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/aos/aos.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 	 
 	 <!-- Template Main CSS File -->
-	 <link href="../assets/css/style.min.css" rel="stylesheet">
-	 <link href="../assets/css/style.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/css/style.min.css" rel="stylesheet">
+	 <link href="../../assets/pelanggan/css/style.css" rel="stylesheet">
 	 
 	 <!-- CSS -->
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
@@ -76,7 +76,7 @@
         <nav id="navbar-header" class="navbar navbar-expand-lg">
           <div class="container">
               <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
-                  <img src="assets/img/logo.png" alt="">
+                  <img src="../../assets/restoran/images/logo2.png" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="lnr lnr-menu"></span>
@@ -91,7 +91,7 @@
                       </li>
                       <div class="d-flex flex-lg-row flex-column">
                           <li class="nav-item active">
-                              <a class="nav-link" href="../index.jsp">Home</a>
+                              <a class="nav-link" href="../../index.jsp">Home</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="about.jsp">About</a>
@@ -103,7 +103,7 @@
                   </ul>
                   
                   <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
-                      <img src="../assets/img/logo.png" alt="">
+                      <img src="../../assets/restoran/images/logo2.png" alt="">
                   </a>
                   <ul class="navbar-nav d-flex justify-content-between">
                       <div class="d-flex flex-lg-row flex-column">
@@ -212,7 +212,7 @@
          <div class="row">
          	<div class="col-lg-4">
          		<div class="footer-widget pr-lg-5 pr-0">
-         			<img src="img/logo.png" class="img-fluid footer-logo mb-3" alt="">
+         			<img src="../../assets/restoran/images/logo2.png" class="img-fluid footer-logo mb-3" alt="">
 	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
 	         		<nav class="nav nav-mastfoot justify-content-start">
 		                <a class="nav-link" href="#">
@@ -271,15 +271,15 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
       <!-- Vendor JS Files -->
-      <script src="../assets/vendor/aos/aos.js"></script>
-      <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-      <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="../assets/vendor/php-email-form/validate.js"></script>
-      <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="../../assets/pelanggan/vendor/aos/aos.js"></script>
+      <script src="../../assets/pelanggan/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../../assets/pelanggan/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="../../assets/pelanggan/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="../../assets/pelanggan/vendor/php-email-form/validate.js"></script>
+      <script src="../../assets/pelanggan/vendor/swiper/swiper-bundle.min.js"></script>
 
       <!-- Template Main JS File -->
-      <script src="../assets/js/main.js"></script>
-      <script src="../assets/js/main.min.js"></script>
+      <script src="../../assets/pelanggan/js/main.js"></script>
+      <script src="../../assets/pelanggan/js/main.min.js"></script>
 </body>
 </html>

@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/vendor/select2/select2.min.css">
-    <link rel="stylesheet" href="../assets/vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../assets/pelanggan/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/pelanggan/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="../../assets/pelanggan/vendor/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.min.css">
+    <link rel="stylesheet" href="../../assets/pelanggan/css/style.min.css">
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -69,7 +69,7 @@
 		<nav id="navbar-header" class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
-            <img src="assets/img/logo.png" alt="">
+            <img src="../../assets/restoran/images/logo2.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-menu"></span>
@@ -84,7 +84,7 @@
                 </li>
                 <div class="d-flex flex-lg-row flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.jsp">About</a>
@@ -96,26 +96,26 @@
             </ul>
             
             <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
-                <img src="assets/img/logo.png" alt="">
+                <img src="../../assets/restoran/images/logo2.png" alt="">
             </a>
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href="views/menu.jsp">Menu</a>
+                        <a class="nav-link" href="menu.jsp">Menu</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="views/reservation.jsp">Reservation</a>
+                        <a class="nav-link" href="reservation.jsp">Reservation</a>
                     </li>
                 </div>
                 <li class="nav-item">
-                    <a type="button" class="btn btn-dark" href="views/login.jsp">Log in</a>
+                    <a type="button" class="btn btn-dark" href="../../login.jsp">Log in</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>			
 <!-- Reservation Section -->
-<section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay" style="background-image: url(img/reservation-bg.jpg);">
+<section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay" style="background-image: url(../../assets/pelanggan/img/reservation-bg.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
@@ -186,12 +186,13 @@
         
     </div>
 </section>
-<!-- End of Reservation Section -->		<footer class="mastfoot pb-5 bg-white section-padding pb-0">
+<!-- End of Reservation Section -->		
+<footer class="mastfoot pb-5 bg-white section-padding pb-0">
     <div class="inner container">
          <div class="row">
          	<div class="col-lg-4">
          		<div class="footer-widget pr-lg-5 pr-0">
-         			<img src="img/logo.png" class="img-fluid footer-logo mb-3" alt="">
+         			<img src="../../assets/restoran/images/logo2.png" class="img-fluid footer-logo mb-3" alt="">
 	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
 	         		<nav class="nav nav-mastfoot justify-content-start">
 		                <a class="nav-link" href="#">
@@ -247,15 +248,15 @@
 	<!-- External JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-	<script src="../assets/vendor/bootstrap/popper.min.js"></script>
-	<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
-	<script src="../assets/vendor/select2/select2.min.js "></script>
-	<script src="../assets/vendor/owlcarousel/owl.carousel.min.js"></script>
+	<script src="../../assets/pelanggan/vendor/bootstrap/popper.min.js"></script>
+	<script src="../../assets/pelanggan/vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="../../assets/pelanggan/vendor/select2/select2.min.js "></script>
+	<script src="../../assets/pelanggan/vendor/owlcarousel/owl.carousel.min.js"></script>
 	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
-	<script src="../assets/vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../assets/pelanggan/vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 
 	<!-- Main JS -->
-	<script src="../assets/js/app.min.js "></script>
+	<script src="../../assets/pelanggan/js/app.min.js "></script>
 </body>
 </html>
