@@ -6,15 +6,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 
-import model.BahanBaku;
+import model.Suplier;
 
-public class BahanDAOImpl implements BahanDAO{
+public class PemasokDAOImpl implements PemasokDAO{
 
 	@Override
-	public void addBahanBaku(BahanBaku b) {
+	public void addPemasok(Suplier s) {
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -27,15 +29,15 @@ public class BahanDAOImpl implements BahanDAO{
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createBahan = connection.prepareCall("{call create_bahan_baku(?,?,?)}");
+			CallableStatement createSuplier = connection.prepareCall("{call create_pesanan(?,?,?)}");
 			
 			java.util.Date date = new java.util.Date();
 			//set value to in parameter
-			createBahan.setString(1, b.getId_bahan());
-			createBahan.setString(2, b.getNama_bahan());
-			createBahan.setInt(3, b.getStok());
+			createSuplier.setString(1, s.getId_suplier());
+			createSuplier.setString(2, s.getNama());
+			createSuplier.setString(3, s.getAlamat());
 			
-			createBahan.executeUpdate();			
+			createSuplier.executeUpdate();			
 			connection.close();  
 			
 			}catch(Exception e){ 
@@ -49,7 +51,7 @@ public class BahanDAOImpl implements BahanDAO{
 	}
 
 	@Override
-	public List<BahanBaku> getList() {
+	public List<Suplier> getList() {
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -57,8 +59,8 @@ public class BahanDAOImpl implements BahanDAO{
 			e.printStackTrace();
 		}
 		Connection connection = null;
-		String sql = "select * from bahanbaku";
-		List<BahanBaku> list = new ArrayList<BahanBaku>();
+		String sql = "select * from suplier";
+		List<Suplier> list = new ArrayList<Suplier>();
 		try {
 			//establish the connection
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
@@ -67,10 +69,10 @@ public class BahanDAOImpl implements BahanDAO{
 					.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				String id_bahan = rs.getString("id_bahan");
-				String nama_bahan = rs.getString("nama_bahan");
-				int stok = rs.getInt("stok");
-				list.add(new BahanBaku(id_bahan, nama_bahan, stok));
+				String id_suplier = rs.getString("id_suplier");
+				String nama = rs.getString("nama");
+				String alamat = rs.getString("alamat");
+				list.add(new Suplier(id_suplier, nama, alamat));
 			}
 			connection.close();
 		} catch (SQLException e) {

@@ -29,7 +29,7 @@ public class PesananDAOImpl implements PesananDAO{
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createPesanan = connection.prepareCall("{call create_pesanan(?,?,?,?)}");
+			CallableStatement createPesanan = connection.prepareCall("{call create_pesanan(?,?,?,?,?)}");
 			
 			java.util.Date date = new java.util.Date();
 			//set value to in parameter
