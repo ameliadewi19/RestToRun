@@ -19,8 +19,8 @@
 	<!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../index.jsp"><img src="../../../assets/restoran/images/logo2.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -300,13 +300,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../reservasi/reservasi.jsp">
+            <a class="nav-link" href="../reservasi/reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../menu/menu.jsp" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="../menu/menu.jsp" >
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
@@ -326,26 +326,27 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../pegawai/pegawai.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/kasir.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/stafGudang.jsp">Staf Gudang</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../pembayaran/pembayaran.jsp"" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="../pembayaran/pembayaran.jsp">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../suplier/suplier.jsp"" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="../pemasok/pemasok.jsp">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Supllier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""../diskon/diskon.jsp"">
+            <a class="nav-link" href="../diskon/diskon.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>
@@ -405,8 +406,8 @@
 		                          <td><%=p.getStatus_pesanan()%></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
 		                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>
-		                          <td><a class="" href="#"><i class="fa fa-edit" ></i></a></td>
-		                          <td><a class="" href="#"><i class="fa fa-trash" ></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-edit" style="margin-right: 30%;"></i></a>
+		                              <a class="" href="#"><i class="fa fa-trash" ></i></a></td>
 		                        </tr>
 		                        </pg:item>
 								<%

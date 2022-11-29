@@ -17,9 +17,9 @@
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.jsp -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.jsp"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.jsp"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -288,31 +288,31 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../../index.jsp">
+            <a class="nav-link" href="../index.jsp">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="../pesanan/pesanan.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Pesanan</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="reservasi.jsp" aria-expanded="false" aria-controls="tables">
+          <li class="nav-item active">
+            <a class="nav-link" href="reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="../menu/menu.jsp" >
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" href="../bahan/bahan.jsp">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
@@ -326,26 +326,27 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../kasir/kasir.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="stafGudang.jsp">Staf Gudang</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="../pembayaran/pembayaran.jsp">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="pemasok.jsp">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Supllier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=" assets/pages/documentation/documentation.jsp">
+            <a class="nav-link" href="../diskon/diskon.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>

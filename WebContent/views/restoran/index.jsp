@@ -21,14 +21,13 @@
 </head>
 <meta charset="ISO-8859-1">
 <body>
-	
   <div class="container-scroller">
 	<!-- sidebar -->
 	<!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../assets/restoran/images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

@@ -16,9 +16,9 @@
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.jsp"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.jsp"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -283,35 +283,35 @@
         </div>
       </div>
       <!-- partial -->
-      <!-- partial:../../partials/_sidebar.html -->
+      <!-- partial:../../partials/_sidebar.jsp -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../../index.jsp">
+            <a class="nav-link" href="../index.jsp">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="../pesanan/pesanan.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Pesanan</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" href="../reservasi/reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="../menu/menu.jsp" >
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+          <li class="nav-item active">
+            <a class="nav-link" href="bahan.jsp">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
@@ -325,131 +325,42 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/kasir.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/stafGudang.jsp">Staf Gudang</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="../pembayaran/pembayaran.jsp">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="../pemasok/pemasok.jsp">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Supllier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=" assets/pages/diskon/diskon.jsp">
+            <a class="nav-link" href="../diskon/diskon.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>
           </li>
         </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Tabel Bahan Baku</h4>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                      <tr>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th><a href="form_bahan.jsp"><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button></a></th>
-                        </tr>
-                        <tr>
-                          <th>Id Bahan Baku</th>
-                          <th>Id Menu</th>
-                          <th>Id Pemasok</th>
-                          <th>Nama Bahan</th>
-                          <th>Stok</th>
-                          <th>Status</th>
-                          <th></th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Tomat</td>
-                          <td>50</td>
-                          <td><label class="badge badge-danger">Pending</label></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Garam</td>
-                          <td>20</td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Ayam</td>
-                          <td>30</td>
-                          <td><label class="badge badge-info">Fixed</label></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Mie</td>
-                          <td>10</td>
-                          <td><label class="badge badge-success">Completed</label></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Telur</td>
-                          <td>10</td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-        
-        <%
+      
+      <%
 			BahanDAOImpl bahanDAO = new BahanDAOImpl();
 	
 			NumberFormat nf = NumberFormat.getInstance();
 			nf.setMinimumFractionDigits(0);
 		%>
-        <!-- content-wrapper ends -->
-        <div class="main-panel">
+      <!-- partial -->
+       <div class="main-panel">
         <div class="content-wrapper">
 	        <div class="row">
 	            <div class="col-md-12 grid-margin stretch-card">
@@ -471,31 +382,31 @@
 	                        <table id="tabelBahan" class="display expandable-table" style="width:100%">
 	                          <thead>
 		                        <tr>
-		                          <th>Id Bahan Baku</th>
+		                          <th>Id Bahan</th>
 		                          <th>Nama Bahan</th>
 		                          <th>Stok</th>
 		                          <th>Action</th>
+		                          
 		                        </tr>
 		                      </thead>
 		                      <tbody>
-		                      <%	
+		                      <%
 		                      		for (BahanBaku b : bahanDAO.getList()) {
 							  %>
 								<pg:item>
 		                        <tr>
-		                          <td><%=b.getId_bahan()%></td>
+		                          <td>id</td>
 		                          <td><%=b.getNama_bahan()%></td>
-		                          <td><%=b.getStok()%></td>
-		                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
-		                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>
-		                          <td><a class="" href="#"><i class="fa fa-edit" ></i></a></td>
-		                          <td><a class="" href="#"><i class="fa fa-trash" ></i></a></td>
+		                          <td>stok</td>
+		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
+		                          <td><a class="" href="#" style="margin-right: 30%;"><i class="fa fa-edit" ></i></a>
+		                          <a class="" href="#"><i class="fa fa-trash" ></i></a></td>
 		                        </tr>
 		                        </pg:item>
-								<%
+		                       <%
 									}
 										
-								%>
+							   %>
 		                      </tbody>
 	                      </table>
 	                      </div>
@@ -506,36 +417,42 @@
 	              </div>
 	            </div>
 	          </div>
-        <!-- partial:../../partials/_footer.html -->
+        
         <!-- footer -->
 		<jsp:include page="/Footer"/>
+        
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../../assets/restoran/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
+  <script src="../../../assets/restoran/vendors/chart.js/Chart.min.js"></script>
+  <script src="../../../assets/restoran/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="../../../assets/restoran/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="../../../assets/restoran/js/dataTables.select.min.js"></script>
+
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="../../../assets/restoran/js/off-canvas.js"></script>
+  <script src="../../../assets/restoran/js/hoverable-collapse.js"></script>
+  <script src="../../../assets/restoran/js/template.js"></script>
+  <script src="../../../assets/restoran/js/settings.js"></script>
+  <script src="../../../assets/restoran/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+  <script src="../../../assets/restoran/js/dashboard.js"></script>
+  <script src="../../../assets/restoran/js/Chart.roundedBarCharts.js"></script>
   <script>
     $(document).ready(function() {
       $('#tabelBahan').DataTable();
   } );
-  </script>
+ </script>
 </body>
 
 </html>

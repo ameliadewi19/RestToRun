@@ -1,8 +1,3 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.Pesanan"%>
-<%@page import="java.util.List"%>
-<%@page import="dao.PesananDAOImpl"%>
-<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,9 +12,9 @@
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.jsp -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../index.jsp"><img src="../../../assets/restoran/images/logo2.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../index.jsp"><img src="../../../assets/restoran/images/logo2.png" alt="logo"/></a>
+       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -293,26 +288,26 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="../pesanan/pesanan.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Pesanan</span>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" href="reservasi.jsp">
+            <a class="nav-link" href="reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../menu/menu.jsp" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="../menu/menu.jsp" >
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../bahan/baku.jsp" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" href="../bahan/bahan.jsp">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
@@ -326,26 +321,27 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../pegawai/pegawai.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../kasir/kasir.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="stafGudang.jsp">Staf Gudang</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../pembayaran/pembayaran.jsp"" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="../pembayaran/pembayaran.jsp">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../suplier/suplier.jsp"" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="pemasok.jsp">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Supllier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""../diskon/diskon.jsp"">
+            <a class="nav-link" href="../diskon/diskon.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>
@@ -355,110 +351,69 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Tabel Reservasi</h4>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                      <tr>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th><a href="form_reservasi.jsp"><button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i></button></a></th>
-                        </tr>
-                        <tr>
-                          <th>Id Reservasi</th>
-                          <th>Id Pesanan</th>
-                          <th>Nama</th>
-                          <th>Tanggal</th>
-                          <th>Koki</th>
-                          <th>Pelayan</th>
-                          <th>Status</th>
-                          <th>Proses</th>
-                          <th>Action</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>                          
-                          <td>53275531</td>
-                          <td>53275531</td>
-                          <td>Jacob</td>
-                          <td>12 May 2017</td>
-                          <td>Mey</td>
-                          <td>Suci</td>
-                          <td><label class="badge badge-danger">Pending</label></td>
-                          <td><button type="button" class="btn btn-info">Proses</button></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>                          
-                          <td>53275532</td>
-                          <td>53275531</td>
-                          <td>Messsy</td>
-                          <td>15 May 2017</td>
-                          <td>Mey</td>
-                          <td>Suci</td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                          <td><button type="button" class="btn btn-info">Proses</button></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>                          
-                          <td>53275533</td>
-                          <td>53275531</td>
-                          <td>John</td>
-                          <td>14 May 2017</td>
-                          <td>Mey</td>
-                          <td>Suci</td>
-                          <td><label class="badge badge-info">Fixed</label></td>
-                          <td><button type="button" class="btn btn-info">Proses</button></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>                          
-                          <td>53275534</td>
-                          <td>53275531</td>
-                          <td>Peter</td>
-                          <td>16 May 2017</td>
-                          <td>Mey</td>
-                          <td>Suci</td>
-                          <td><label class="badge badge-success">Completed</label></td>
-                          <td><button type="button" class="btn btn-info">Proses</button></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                        <tr>                          
-                          <td>53275535</td>
-                          <td>53275531</td>
-                          <td>Dave</td>
-                          <td>20 May 2017</td>
-                          <td>Mey</td>
-                          <td>Suci</td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                          <td><button type="button" class="btn btn-info">Proses</button></td>
-                          <td><button type="button" class="btn btn-warning">Edit</button></td>
-                          <td><button type="button" class="btn btn-danger">Hapus</button></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>  
+	        <div class="row">
+	            <div class="col-md-12 grid-margin stretch-card">
+	              <div class="card">
+	                <div class="card-body">
+	                <div class="row" style="margin-bottom: 20px;">
+	                	<div class="col-md-11">
+	                		<p class="card-title">Data Reservasi</p>
+	                	</div>
+	                	<div class="col-md-1">
+	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                        <i class="fa fa-add" ></i>
+	                      	</button></a>
+	                	</div>
+	                </div>
+	                 <div class="row">
+	                    <div class="col-12">
+	                      <div class="table-responsive">
+	                        <table id="tabelReservasi" class="display expandable-table" style="width:100%">
+	                          <thead>
+		                        <tr>
+		                          <th>Id Reservasi</th>
+		                          <th>Id Pesanan</th>
+		                          <th>Nama</th>
+		                          <th>Tanggal</th>
+		                          <th>Koki</th>
+		                          <th>Pelayan</th>
+		                          <th>Status</th>
+		                          <th>Proses</th>
+		                          <th>Action</th>
+		                        </tr>
+		                      </thead>
+		                      <tbody>       
+								<pg:item>
+		                        <tr>
+		                          <th>Id Reservasi</th>
+		                          <th>Id Pesanan</th>
+		                          <th>Nama</th>
+		                          <th>Tanggal</th>
+		                          <th>Koki</th>
+		                          <th>Pelayan</th>
+		                          <th>Status</th>
+		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
+		                          <td><a class="" href="#"><i class="fa fa-check"></i></a></td>
+		                          <td><a class="" href="#"><i class="fa fa-edit" style="margin-right: 30%;"></i></a>
+		                              <a class="" href="#"><i class="fa fa-trash"></i></a></td>
+		                        </tr>
+		                        </pg:item>
+		                      </tbody>
+	                      </table>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>  
         <!-- content-wrapper ends -->
+                 
         <!-- partial:../../partials/_footer.jsp -->
-        <jsp:include page="/Footer"/>
+        <!-- footer -->
+		<jsp:include page="/Footer"/>
+        
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -467,20 +422,32 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../../assets/restoran/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
+  <script src="../../../assets/restoran/vendors/chart.js/Chart.min.js"></script>
+  <script src="../../../assets/restoran/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="../../../assets/restoran/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="../../../assets/restoran/js/dataTables.select.min.js"></script>
+
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="../../../assets/restoran/js/off-canvas.js"></script>
+  <script src="../../../assets/restoran/js/hoverable-collapse.js"></script>
+  <script src="../../../assets/restoran/js/template.js"></script>
+  <script src="../../../assets/restoran/js/settings.js"></script>
+  <script src="../../../assets/restoran/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+  <script src="../../../assets/restoran/js/dashboard.js"></script>
+  <script src="../../../assets/restoran/js/Chart.roundedBarCharts.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabelReservasi').DataTable();
+  } );
+ </script>
 </body>
 
 </html>
+    
     
