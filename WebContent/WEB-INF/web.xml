@@ -58,8 +58,10 @@
   </servlet-mapping>
   
   <servlet>
-	<servlet-name>PesananServlet</servlet-name>
-	<servlet-class>controller.PesananServlet</servlet-class>
+    <description></description>
+    <display-name>PesananServlet</display-name>
+    <servlet-name>PesananServlet</servlet-name>
+    <servlet-class>controller.PesananServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PesananServlet</servlet-name>
@@ -84,4 +86,12 @@
     <url-pattern>/BahanServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	<servlet-name>KeranjangServlet</servlet-name>
+	<servlet-class>controller.KeranjangServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeranjangServlet</servlet-name>
+    <url-pattern>/KeranjangServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

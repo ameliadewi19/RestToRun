@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Menu"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.MenuDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -348,6 +353,12 @@
           </li>
         </ul>
       </nav>
+      <%
+			MenuDAOImpl menuDAO = new MenuDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -380,20 +391,26 @@
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
-		                      <tbody>       
+		                      <tbody>   
+		                      <%	for (Menu m : menuDAO.getList()) {
+								%>    
 								<pg:item>
 		                        <tr>
-		                          <td>Id Menu</td>
-		                          <td>Id Jenis</td>
-		                          <td>Nama Menu</td>
-		                          <td>Harga</td>
-		                          <td>Estimasi Waktu</td>
-		                          <td>Stok</td>
+		                          <td><%= m.getId_menu() %></td>
+		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getNama_menu() %></td>
+		                          <td><%= m.getHarga() %></td>
+		                          <td><%= m.getEstimasi_waktu() %></td>
+		                          <td><%= m.getStok() %></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#" style="margin-right: 30%;"><i class="fa fa-edit" ></i></a>
 		                          <a class="" href="#"><i class="fa fa-trash" ></i></a></td>
 		                        </tr>
 		                        </pg:item>
+								<%
+									}
+										
+								%>
 		                      </tbody>
 	                      </table>
 	                      </div>

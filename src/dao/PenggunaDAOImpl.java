@@ -131,4 +131,42 @@ public class PenggunaDAOImpl implements PenggunaDAO {
 		
 		return hasil;
 	}
+	
+	@Override
+	public String getIdPelangganByEmail(String email) {
+		// TODO Auto-generated method stub
+		String hasil = "";
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement id = connection.prepareCall("{? = call getIDPengguna(?)}");
+			
+			//set value to in parameter
+			id.registerOutParameter(1, Types.VARCHAR);
+			id.setString(2, email);
+			
+			
+			id.executeUpdate();
+			hasil = id.getString(1);
+			connection.close();  
+			
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+		
+		return hasil;
+	}
 }

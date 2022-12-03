@@ -18,6 +18,10 @@ public class Menu {
 		this.id_jenis = id_jenis;
 	}
 
+	public Menu() {
+		
+	}
+
 	public String getId_menu() {
 		return id_menu;
 	}

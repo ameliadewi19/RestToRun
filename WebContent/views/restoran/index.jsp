@@ -1,3 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Pesanan"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.PesananDAOImpl"%>
+<%@page import="dao.IndexDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -367,9 +373,30 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
-              
+
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                 <h3 class="font-weight-bold">Welcome 
+                    <%
+	                if(session.getAttribute("jenisUser") != null) {
+	                	String hasil = (String)session.getAttribute("jenisUser");
+	                	String JenisUser = "";
+	                	String jenis = hasil.replaceAll("\\s", "");
+	                	if(jenis.equals("mnjr")) {
+		                	JenisUser = "Manajer";
+			    	    } else if (jenis.equals("plyn")){
+			    	    	JenisUser = "Pelayan";
+			    	    } else if (jenis.equals("ksr")){
+			    	    	JenisUser = "Kasir";
+			    	    } else if (jenis.equals("koki")){
+			    	    	JenisUser = "Koki";
+			    	    } else if (jenis.equals("stfgdg")){
+			    	    	JenisUser = "Staf Gudang";
+			    	    }
+		    	   %> 
+                	<%=JenisUser%>
+                	<%
+	                }
+	                %>
 	                <%
 	                if(session.getAttribute("namaUser") != null) {
 	                %>
@@ -390,6 +417,19 @@
               </div>
             </div>
           </div>
+          <%
+			IndexDAOImpl indexDAO = new IndexDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+			%>
+			
+			<% 
+				int pesananHariIni = indexDAO.getPesananHariIni(); 
+				int pesananTotal = indexDAO.getPesanan();
+				int reservasiHariIni = indexDAO.getReservasiHariIni();
+				int reservasiTotal = indexDAO.getReservasi();			
+			%>
           <div class="row">
             <div class="col-md-6 grid-margin transparent" >
             	<div class="card">
@@ -402,8 +442,8 @@
                   <div class="card card-tale">
                     <div class="card-body">
                       <p class="mb-4">Total Pesanan Hari Ini</p>
-                      <p class="fs-30 mb-2">4006</p>
-                      <p>10.00% (30 days)</p>
+                      <p class="fs-30 mb-2"><%= pesananHariIni %></p>
+                      <p>Pesanan</p>
                     </div>
                   </div>
                 </div>
@@ -411,8 +451,8 @@
                   <div class="card card-dark-blue">
                     <div class="card-body">
                       <p class="mb-4">Total Pesanan</p>
-                      <p class="fs-30 mb-2">61344</p>
-                      <p>22.00% (30 days)</p>
+                      <p class="fs-30 mb-2"><%= pesananTotal %></p>
+                      <p>Pesanan</p>
                     </div>
                   </div>
                 </div>
@@ -422,8 +462,8 @@
                   <div class="card card-light-blue">
                     <div class="card-body">
                       <p class="mb-4">Total Reservasi Hari Ini</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
+                      <p class="fs-30 mb-2"><%= reservasiHariIni%></p>
+                      <p>Reservasi</p>
                     </div>
                   </div>
                 </div>
@@ -431,8 +471,8 @@
                   <div class="card card-light-danger">
                     <div class="card-body">
                       <p class="mb-4">Total Reservasi</p>
-                      <p class="fs-30 mb-2">47033</p>
-                      <p>0.22% (30 days)</p>
+                      <p class="fs-30 mb-2"><%= reservasiTotal %></p>
+                      <p>Reservasi</p>
                     </div>
                   </div>
                 </div>

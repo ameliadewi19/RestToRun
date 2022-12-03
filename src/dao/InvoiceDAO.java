@@ -8,4 +8,6 @@ public interface InvoiceDAO {
 	public void addInvoice(Invoice i);
 
 	public List<Invoice> getList();
+	
+	public int getLastId();
 }

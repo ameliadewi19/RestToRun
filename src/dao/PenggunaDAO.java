@@ -17,4 +17,6 @@ public interface PenggunaDAO {
  	public String getJenis(String email);
  	
  	public String getNamaUser(String email);
+ 	
+ 	public String getIdPelangganByEmail(String email);
 }

@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.Pesanan"%>
+<%@page import="model.Diskon"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.PesananDAOImpl"%>
+<%@page import="dao.DiskonDAOImpl"%>
 <%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -353,6 +353,12 @@
           </li>
         </ul>
       </nav>
+      <%
+			DiskonDAOImpl diskonDAO = new DiskonDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -376,25 +382,32 @@
 	                        <table id="tabelDiskon" class="display expandable-table" style="width:100%">
 	                          <thead>
 		                        <tr>
-		                          <th>Potongan</th>
+		                          <th>Id Menu</th>
 		                          <th>Tanggal Mulai</th>
 		                          <th>Tanggal Akhir</th>
-		                          <th>Id Menu</th>
+		                          <th>Potongan</th>
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
-		                      <tbody>       
+		                      <tbody>   
+		                      <%
+		                      		for (Diskon d : diskonDAO.getList()) {
+							  %>    
 								<pg:item>
 		                        <tr>
-		                          <td>Potongan</td>
-		                          <td>Tanggal Mulai</td>
-		                          <td>Tanggal Akhir</td>
-		                          <td>Id Menu</td>
+		                          <td><%= d.getMenu().getId_jenis() %></td>
+		                          <td><%= d.getTanggal_mulai() %></td>
+		                          <td><%= d.getTanggal_akhir() %></td>
+		                          <td><%= d.getPotongan() %></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#" style="margin-right: 30%;"><i class="fa fa-edit" ></i></a>
 		                          <a class="" href="#"><i class="fa fa-trash" ></i></a></td>
 		                        </tr>
 		                        </pg:item>
+		                        <%
+									}
+										
+							   %>
 		                      </tbody>
 	                      </table>
 	                      </div>

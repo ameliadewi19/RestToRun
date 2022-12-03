@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Reservasi"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ReservasiDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -349,6 +354,13 @@
         </ul>
       </nav>
       <!-- partial -->
+      	<%
+			ReservasiDAOImpl reservasiDAO = new ReservasiDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
+      
       <div class="main-panel">
         <div class="content-wrapper">
 	        <div class="row">
@@ -373,31 +385,31 @@
 		                        <tr>
 		                          <th>Id Reservasi</th>
 		                          <th>Id Pesanan</th>
-		                          <th>Nama</th>
-		                          <th>Tanggal</th>
-		                          <th>Koki</th>
-		                          <th>Pelayan</th>
+		                          <th>Waktu</th>
 		                          <th>Status</th>
 		                          <th>Proses</th>
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
-		                      <tbody>       
+		                      <tbody>
+		                      <%	for (Reservasi r : reservasiDAO.getList()) {
+								%>
 								<pg:item>
 		                        <tr>
-		                          <th>Id Reservasi</th>
-		                          <th>Id Pesanan</th>
-		                          <th>Nama</th>
-		                          <th>Tanggal</th>
-		                          <th>Koki</th>
-		                          <th>Pelayan</th>
-		                          <th>Status</th>
+		                          <td><%= r.getId_reservasi() %></td>
+		                          <td><%= r.getId_pesanan() %></td>
+		                          <td><%= r.getWaktu() %></td>
+		                          <td>Status</td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#"><i class="fa fa-check"></i></a></td>
 		                          <td><a class="" href="#"><i class="fa fa-edit" style="margin-right: 30%;"></i></a>
 		                              <a class="" href="#"><i class="fa fa-trash"></i></a></td>
 		                        </tr>
 		                        </pg:item>
+		                        <%
+									}
+										
+								%>
 		                      </tbody>
 	                      </table>
 	                      </div>

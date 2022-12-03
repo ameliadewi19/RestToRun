@@ -395,9 +395,9 @@
 							  %>
 								<pg:item>
 		                        <tr>
-		                          <td>id</td>
+		                          <td><%=b.getId_bahan()%></td>
 		                          <td><%=b.getNama_bahan()%></td>
-		                          <td>stok</td>
+		                          <td><%=b.getStok()%></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#" style="margin-right: 30%;"><i class="fa fa-edit" ></i></a>
 		                          <a class="" href="#"><i class="fa fa-trash" ></i></a></td>

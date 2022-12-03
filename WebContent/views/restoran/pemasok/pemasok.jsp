@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Suplier"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.PemasokDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -349,6 +354,12 @@
         </ul>
       </nav>
       <!-- partial -->
+      <%
+			PemasokDAOImpl pemasokDAO = new PemasokDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <div class="main-panel">
         <div class="content-wrapper">
 	        <div class="row">
@@ -377,17 +388,24 @@
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
-		                      <tbody>       
+		                      <tbody>     
+		                      <%
+		                      		for (Suplier s : pemasokDAO.getList()) {
+							  %>  
 								<pg:item>
 		                        <tr>
-		                          <td>Id Pemasok</td>
-		                          <td>Nama</td>
-		                          <td>Alamat</td>
+		                          <td><%= s.getId_suplier() %></td>
+		                          <td><%= s.getNama() %></td>
+		                          <td><%= s.getAlamat() %></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#" style="margin-right: 30%;"><i class="fa fa-edit" ></i></a>
 		                          <a class="" href="#"><i class="fa fa-trash" ></i></a></td>
 		                        </tr>
 		                        </pg:item>
+		                        <%
+									}
+										
+							   %>
 		                      </tbody>
 	                      </table>
 	                      </div>

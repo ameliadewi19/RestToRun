@@ -354,11 +354,11 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Pesanan</h4>
-                  <form class="form-sample">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PelangganServlet">
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nama Pelanggan</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama"/>
+                            <input type="text" class="form-control" name="nama_pelanggan"/>
                           </div>
                         </div>
                       
@@ -374,6 +374,7 @@
                             <input type="date" class="form-control" class='input-group date' id='datetimepicker1' name="tanggal"/>
                           </div>
                         </div>
+                        <button class="btn btn-success mr-2">Tambah Pesanan</button>
                   </form>
                 </div>
               </div>

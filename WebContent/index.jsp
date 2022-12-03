@@ -103,7 +103,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="views/pelanggan/menu.jsp">Menu</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="views/pelanggan/reservation.jsp">Reservation</a>
                     </li>

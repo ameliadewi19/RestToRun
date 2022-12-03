@@ -1,5 +1,7 @@
+<%@page import="dao.MenuDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.text.NumberFormat"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,21 +138,33 @@
                              </div>
                           </div>                                               
                     </div>
+                    <%
+						
+						String id_menu = "";
+						if (request.getParameter("id_menu") != null) {
+							id_menu = request.getParameter("id_menu");
+						}
+				
+						MenuDAOImpl menuDAO = new MenuDAOImpl();
+						NumberFormat nf = NumberFormat.getInstance();
+						nf.setMinimumFractionDigits(0);
+					%>
+					
+					
                                     <!--Tab slider End-->
                                     <div class="col-xl-9 col-sm-12">
                                         <div class="product-detail-content">
                                             <!--Product details-->
                                             <div class="new-arrival-content pr">
-                                                <h4>Lobster Bisque</h4>
-                                                <p class="price">$320.00</p>
-                                                <p>Availability: <span class="item"> In stock <i
+                                                <h4><%= menuDAO.getMenu(id_menu).getNama_menu() %></h4>
+                                                <p class="price">Rp. <%= menuDAO.getMenu(id_menu).getHarga() %></p>
+                                                <p>Stok: <span class="item"> <%= menuDAO.getMenu(id_menu).getStok() %> <i
                                                             class="fa fa-shopping-basket"></i></span>
                                                 </p>
-                                                <p>Product code: <span class="item">0405689</span> </p>
-                                                <p>Brand: <span class="item">Lee</span></p>
+                                                <p>Product code: <span class="item"><%= menuDAO.getMenu(id_menu).getId_menu() %></span> </p>
                                                 <p class="text-content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
                                                     If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                                                <div class="filtaring-area my-3">
+                                                <!-- <div class="filtaring-area my-3">
                                                     <div class="size-filter">
                                                         <h4 class="m-b-15">Select size</h4>
                                                         <ul>
@@ -159,6 +173,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+                                                -->
                                                 <!--Quantity start-->
 												<div class="col-2 px-0">
 													<input type="number" name="num" class="form-control input-btn input-number" value="1">

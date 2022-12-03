@@ -13,6 +13,7 @@ import java.util.List;
 import java.sql.Date;
 
 import model.Diskon;
+import model.Menu;
 
 public class DiskonDAOImpl implements DiskonDAO{
 
@@ -75,8 +76,9 @@ public class DiskonDAOImpl implements DiskonDAO{
 				String tanggal_mulai = rs.getString("tanggal_mulai");
 				String tanggal_akhir = rs.getString("tanggal_akhir");
 				String menu_id_menu = rs.getString("menu_id_menu");
-				
-				list.add(new Diskon(potongan, tanggal_mulai, tanggal_akhir, menu_id_menu));
+				Menu menu = new Menu();
+				menu.setId_menu(menu_id_menu);
+				list.add(new Diskon(potongan, tanggal_mulai, tanggal_akhir, menu));
 			}
 			connection.close();
 		} catch (SQLException e) {

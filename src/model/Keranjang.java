@@ -3,14 +3,13 @@ package model;
 public class Keranjang {
 	private Menu menu;
 	private int jumlah;
-	
-	public Keranjang() {
-	}
-	
-	public Keranjang(Menu menu, int jumlah) {
+	private Pelanggan pelanggan;
+
+	public Keranjang(Menu menu, int jumlah, Pelanggan pelanggan) {
 		super();
 		this.menu = menu;
 		this.jumlah = jumlah;
+		this.pelanggan = pelanggan;
 	}
 
 	public Menu getMenu() {
@@ -27,5 +26,13 @@ public class Keranjang {
 
 	public void setJumlah(int jumlah) {
 		this.jumlah = jumlah;
+	}
+
+	public Pelanggan getPelanggan() {
+		return pelanggan;
+	}
+
+	public void setPelanggan(Pelanggan pelanggan) {
+		this.pelanggan = pelanggan;
 	}
 }

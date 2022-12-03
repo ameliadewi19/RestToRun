@@ -1,25 +1,32 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.Pesanan"%>
-<%@page import="java.util.List"%>
-<%@page import="dao.PesananDAOImpl"%>
-<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- header -->
-<jsp:include page="../headerDua.jsp"/>
-<!------------>
-
+<head>
+  <jsp:include page="../headerDua.jsp"/>
+</head>
 <meta charset="ISO-8859-1">
 <body>
+<%
+		String email = null;
+  		String jenisUser = null;
+		Cookie[] cookies = request.getCookies();
+		if(cookies !=null)
+			{
+				for(Cookie cookie : cookies)
+				{
+				    if(cookie.getName().equals("email")) 
+				    	email = cookie.getValue();
+				}
+			}
+  %>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.jsp -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.jsp"><img src="../../../assets/restoran/images/logo2.png" style="width: 150px; height: 60px;" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.jsp"><img src="../../../assets/restoran/images/logo.png" style="width: 70px; height: 70px;" alt="logo"/></a>
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="../../index.jsp"><img src="../../../assets/restoran/images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.jsp"><img src="../../../assets/restoran/images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -88,7 +95,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/face28.jpg" alt="profile"/>
+              <img src="../../../assets/restoran/images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -228,7 +235,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -236,7 +243,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -247,7 +254,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -255,7 +262,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -263,7 +270,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -271,7 +278,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="../../../assets/restoran/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -293,26 +300,26 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="../pesanan/pesanan.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Pesanan</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../reservasi/reservasi.jsp">
+            <a class="nav-link" data-toggle="collapse" href="../reservasi/reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../menu/menu.jsp" >
+            <a class="nav-link" data-toggle="collapse" href="../menu/menu.jsp" aria-expanded="false" aria-controls="error">
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../bahan/bahan.jsp">
+            <a class="nav-link" data-toggle="collapse" href="../bahan/baku.jsp" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
@@ -326,27 +333,26 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../kasir/kasir.jsp">Kasir</a></li>
-                <li class="nav-item"> <a class="nav-link" href="stafGudang.jsp">Staf Gudang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pegawai.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="pembayaran.jsp">
+            <a class="nav-link" data-toggle="collapse" href="pembayaran.jsp" aria-expanded="false" aria-controls="form-elements">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pemasok.jsp">
+            <a class="nav-link" data-toggle="collapse" href="../suplier/suplier.jsp" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Supllier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../diskon/diskon.jsp">
+            <a class="nav-link" href=""../diskon/diskon.jsp"">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>
@@ -361,152 +367,43 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Pembayaran</h4>
-                  <form class="form-sample">
-                    <p class="card-description">
-                      Personal info
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Menu</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Jenis</label>
-                          <div class="col-sm-8">
-                            <select class="form-control">
-                              <option>J001</option>
-                              <option>J002</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Nama Menu</label>
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PembayaranServlet">
+                       	<div class="form-group row">
+                          <label class="col-sm-2 col-form-label">Metode Pembayaran</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control"/>
+                          	<label class="col-sm-1 col-form-label">
+                           	<input type="radio" class="form-check-input" name="metode" id="optionsRadios1" value="Cash" checked>
+                              Cash
+                            </label>
+                            
+                            <label class="col-sm-2 col-form-label">
+                           	<input type="radio" class="form-check-input" name="metode" id="optionsRadios1" value="Transfer Bank">
+                              Transfer Bank
+                            </label>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Harga</label>
+                          <label class="col-sm-2 col-form-label">Jumlah Bayar</label>
                           <div class="col-sm-10">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-primary text-white">Rp.</span>
-                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                              <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
-                              </div>
-                            </div>
+                            <input type="text" class="form-control" name="jumlah"/>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Estimasi Waktu</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="text" id="time"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Stok</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="text" id="stok"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+						<input type="hidden" class="form-control" name="email" value="<%= email %>">
+						
+						<%
+	                        	String idpesanan = request.getParameter("id_pesanan");
+	                        %>
+						<input type="hidden" class="form-control" name="idpesanan" value="<%= idpesanan %>">
+                        <button class="btn btn-success mr-2">Tambah Pembayaran</button>
                   </form>
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
+        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.jsp -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright � 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-        </footer>
+        <jsp:include page="/Footer"/>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->

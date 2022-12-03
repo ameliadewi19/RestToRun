@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Pesanan"%>
+<%@page import="model.PesananView"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.PesananDAOImpl"%>
 <%@page import="java.text.NumberFormat"%>
@@ -372,7 +373,7 @@
 	                		<p class="card-title">Data Pesanan</p>
 	                	</div>
 	                	<div class="col-md-1">
-	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="" href="form_pesanan.jsp"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-add" ></i>
 	                      	</button></a>
 	                	</div>
@@ -383,8 +384,8 @@
 	                        <table id="tabelPesan" class="display expandable-table" style="width:100%">
 	                          <thead>
 		                        <tr>
+		                          <th>ID Pesanan</th>
 		                          <th>Nama</th>
-		                          <th>Id Pesanan</th>
 		                          <th>Tanggal</th>
 		                          <th>Koki</th>
 		                          <th>Pelayan</th>
@@ -394,15 +395,15 @@
 		                        </tr>
 		                      </thead>
 		                      <tbody>
-		                      <%	for (Pesanan p : pesananDAO.getList()) {
+		                      <%	for (PesananView p : pesananDAO.getList()) {
 								%>
 								<pg:item>
 		                        <tr>
-		                          <td>Nama</td>
-		                          <td><%=p.getId_pesanan()%></td>
-		                          <td><%=p.getWaktu()%></td>
-		                          <td>Koki</td>
-		                          <td>Pelayan</td>
+		                          <td><%=p.getId_pesanan() %></td>
+		                          <td><%=p.getNama_pelanggan() %></td>
+		                          <td><%=p.getWaktu() %></td>
+		                          <td><%=p.getNama_koki() %></td>
+		                          <td><%=p.getNama_pelayan() %></td>
 		                          <td><%=p.getStatus_pesanan()%></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td>  -->
 		                          <td><a class="" href="#"><i class="fa fa-check" ></i></a></td>

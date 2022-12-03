@@ -1,3 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Invoice"%>
+<%@page import="model.InvoiceView"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.InvoiceViewDAOImpl"%>
+<%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -348,6 +354,12 @@
           </li>
         </ul>
       </nav>
+      <%
+			InvoiceViewDAOImpl invoiceViewDAO = new InvoiceViewDAOImpl();
+	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -373,27 +385,40 @@
 		                        <tr>
 		                          <th>Id Pembayaran</th>
 		                          <th>Id Pesanan</th>
+		                          <th>Id Pelanggan</th>
+		                          <th>Nama Pelanggan</th>
 		                          <th>Id Kasir</th>
+		                          <th>Nama Kasir</th>
 		                          <th>Jumlah</th>
 		                          <th>Status Pembayaran</th>
 		                          <th>Proses</th>
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
-		                      <tbody>       
+		                      <tbody> 
+		                      <%
+		                      		for (InvoiceView i : invoiceViewDAO.getList()) {
+							  %>      
 								<pg:item>
 		                        <tr>
-		                          <td>Id Pembayaran</td>
-		                          <td>Id Pesanan</td>
-		                          <td>Id Kasir</td>
-		                          <td>Jumlah</td>
-		                          <td>Status Pembayaran</td>
+		                          <td><%= i.getId_invoice() %></td>
+		                          <td><%= i.getId_pesanan() %></td>
+		                          <td><%= i.getId_pelanggan() %></td>
+		                          <td><%= i.getNama_pelanggan() %></td>
+		                          <td><%= i.getId_kasir() %></td>
+		                          <td><%= i.getNama_kasir() %></td>
+		                          <td><%= i.getJumlah() %></td>
+		                          <td><%= i.getStatus_pembayaran() %></td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
 		                          <td><a class="" href="#"><i class="fa fa-check"></i></a></td>
 		                          <td><a class="" href="#"><i class="fa fa-edit" style="margin-right: 30%;"></i></a>
 		                              <a class="" href="#"><i class="fa fa-trash"></i></a></td>
 		                        </tr>
 		                        </pg:item>
+		                      	<%
+									}
+										
+								%>
 		                      </tbody>
 	                      </table>
 	                      </div>
