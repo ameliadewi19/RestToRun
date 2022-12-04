@@ -10,4 +10,6 @@ public interface KeranjangDAO {
 	public List<Keranjang> getList();
 	
 	public List<Keranjang> getListPelanggan(String id_pelanggan);
+	
+	public List<Keranjang> getListPL(String idpl);
 }

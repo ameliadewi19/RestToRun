@@ -163,8 +163,9 @@ public class PesananDAOImpl implements PesananDAO{
 	}
 
 	@Override
-	public void addDetailPesanan(String idpes) {
+	public String getIDPelIDPes(String idpes) {
 		// TODO Auto-generated method stub
+		String hasil = "";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -176,16 +177,17 @@ public class PesananDAOImpl implements PesananDAO{
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createPesanan = connection.prepareCall("{call create_deta(?,?,?,?)}");
+			CallableStatement id = connection.prepareCall("{? = call GETIDPELBYIDPES(?)}");
 			
-			java.util.Date date = new java.util.Date();
 			//set value to in parameter
-			createPesanan.setString(1, p.getId_pesanan());
-			createPesanan.setString(2, "Belum Diverifikasi");
-			createPesanan.setTimestamp(3, new Timestamp(date.getTime()));
-			createPesanan.setString(4, p.getId_pelanggan());
+			id.registerOutParameter(1, Types.VARCHAR);
+			id.setString(2, idpes);
+			System.out.println("idpes:  " + idpes);
 			
-			createPesanan.executeUpdate();	
+			id.executeUpdate();
+			hasil = id.getString(1);
+			
+			System.out.println("hasil:  " + hasil);
 			
 			connection.close();  
 			
@@ -197,5 +199,7 @@ public class PesananDAOImpl implements PesananDAO{
 		} else {
 			System.out.println("\nFailed to connect to Oracle DB");
 		}
-	}
+		
+		return hasil;
+	}	
 }

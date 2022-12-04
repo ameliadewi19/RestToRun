@@ -361,155 +361,37 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Reservasi</h4>
-                  <form class="form-sample">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/ReservasiServlet">
                     <p class="card-description">
-                      Personal info
+                      Data Pelanggan
                     </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Pembayaran</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Pelayan</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Koki</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Kasir</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Pesanan</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Pelanggan</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Status</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Tanggal</label>
+                          <label class="col-sm-2 col-form-label">Nama Pelanggan</label>
                           <div class="col-sm-8">
-                            <input type="date" class="form-control" class='input-group date' id='datetimepicker1'/>
+                            <input type="text" class="form-control" name="nama">
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Waktu</label>
+                          <label class="col-sm-2 col-form-label">No Telp</label>
                           <div class="col-sm-8">
-                            <input class="form-control" type="text" id="time"/>
+                            <input type="text" class="form-control" name="notelp">
                           </div>
                         </div>
+                      </div>
+                      <div class="col-md-12">
+	                      <div class="form-group row">
+	                          <label class="col-sm-2 col-form-label">Tanggal</label>
+	                          <div class="col-sm-8">
+	                            <input type="date" class="form-control" class='input-group date' id='datetimepicker1' name="tanggal">
+	                          </div>
+	                        </div>
                       </div>
                     </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                    </form>
                 </div>
               </div>
             </div>

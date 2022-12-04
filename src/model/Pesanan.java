@@ -18,6 +18,10 @@ public class Pesanan {
 		this.no_antrian = no_antrian;
 	}
 
+	public Pesanan() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId_pesanan() {
 		return id_pesanan;
 	}

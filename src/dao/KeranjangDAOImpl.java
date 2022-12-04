@@ -121,4 +121,39 @@ public class KeranjangDAOImpl implements KeranjangDAO{
 		}
 		return list;
 	}
+	
+	public List<Keranjang> getListPL(String idpl) {
+		// TODO Auto-generated method stub
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		String sql = "select * from keranjang where pelanggan_id_pelanggan='" + idpl + "'";
+		List<Keranjang> list = new ArrayList<Keranjang>();
+		try {
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			PreparedStatement ps = (PreparedStatement) connection
+					.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String id_menu = rs.getString("id_menu");
+				int jumlah = rs.getInt("jumlah");
+				String id_pelanggan = rs.getString("pelanggan_id_pelanggan");
+				Menu menu = new Menu();
+				menu.setId_menu(id_menu);
+				Pelanggan pelanggan = new Pelanggan();
+				pelanggan.setId_pelanggan(id_pelanggan);
+				list.add(new Keranjang(menu, jumlah, pelanggan));
+			}
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 }

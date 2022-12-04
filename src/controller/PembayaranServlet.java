@@ -8,9 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.DetailPesananDAOImpl;
 import dao.InvoiceDAOImpl;
 import dao.PelangganDAOImpl;
 import dao.PenggunaDAOImpl;
+import dao.PesananDAOImpl;
 import model.Invoice;
 import model.Pelanggan;
 import model.Pengguna;
@@ -55,8 +57,13 @@ public class PembayaranServlet extends HttpServlet {
 		System.out.println("jumlah: " + jumlah);
 		String idPengguna = penggunaDAO.getIdPelangganByEmail(email);
 		
-		// insert into detail pesanan
-		jn
+		// add detail pesanan
+		DetailPesananDAOImpl detailDAO = new DetailPesananDAOImpl();
+		PesananDAOImpl pes = new PesananDAOImpl();
+		String idpl = pes.getIDPelIDPes(idpes);
+		System.out.println("idpl: " + idpl);
+		System.out.println("idpl: " + idpes);
+		detailDAO.addDetailPesananAll(idpl, idpes);
 		
 		// add data pembayaran
 		InvoiceDAOImpl invoiceDAO = new InvoiceDAOImpl();;

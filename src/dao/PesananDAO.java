@@ -14,5 +14,5 @@ public interface PesananDAO {
 	
 	public int getLastId();
 	
-	public void addDetailPesanan(String idpes);
+	public String getIDPelIDPes(String idpes);
 }
