@@ -16,4 +16,5 @@ public interface MenuDAO {
 		
 	public List<Menu> searchList(String nama_menu, JenisMenu jenis);
 	
+	public int getLastId();
 }

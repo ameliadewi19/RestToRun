@@ -12,6 +12,10 @@ public class BahanBaku {
 		this.stok = stok;
 	}
 
+	public BahanBaku() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId_bahan() {
 		return id_bahan;
 	}

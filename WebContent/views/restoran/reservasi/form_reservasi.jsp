@@ -361,10 +361,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Reservasi</h4>
-                  <form class="form-sample" method="POST" action="/RestoranWeb/ReservasiServlet">
-                    <p class="card-description">
-                      Data Pelanggan
-                    </p>
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PelangganReservasiServlet">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
@@ -389,7 +386,9 @@
 	                            <input type="date" class="form-control" class='input-group date' id='datetimepicker1' name="tanggal">
 	                          </div>
 	                        </div>
+                      	<button class="btn btn-success mr-2">Tambah Pesanan</button>
                       </div>
+                      
                     </div>
                     </form>
                 </div>

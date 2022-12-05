@@ -466,7 +466,7 @@
 		                      </thead>
 		                      <tbody>   
 		                      <%	for (Keranjang k : keranjangDAO.getListPelanggan(id_plgn)) {
-								%>    
+								%>
 								<pg:item>
 		                        <tr>
 		                          <td><%= k.getPelanggan().getId_pelanggan() %></td>

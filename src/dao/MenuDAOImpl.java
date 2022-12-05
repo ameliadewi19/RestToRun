@@ -29,13 +29,14 @@ public class MenuDAOImpl implements MenuDAO {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createMenu = connection.prepareCall("{call create_menu(?,?,?,?,?,?)}");
+			CallableStatement createMenu = connection.prepareCall("{call create_menu(?,?,?,?,?)}");
 			
 			//set value to in parameter
 			createMenu.setString(1, m.getNama_menu());	
 			createMenu.setInt(2, m.getHarga());
 			createMenu.setInt(3, m.getEstimasi_waktu());
 			createMenu.setInt(4, m.getStok());
+			createMenu.setString(5, m.getJenis_menu().getId_jenis());
 			
 			createMenu.executeUpdate();			
 			connection.close();  
@@ -75,7 +76,10 @@ public class MenuDAOImpl implements MenuDAO {
 				int estimasi_waktu = rs.getInt("estimasi_waktu");
 				int stok = rs.getInt("stok");
 				String jenis = rs.getString("jenis_id_jenis");
-				list.add(new Menu(id_menu, nama_menu, harga, estimasi_waktu, stok, jenis));
+
+				JenisMenu jenisMenu= new JenisMenu();
+				jenisMenu.setId_jenis(jenis);
+				list.add(new Menu(id_menu, nama_menu, harga, estimasi_waktu, stok, jenisMenu));
 			}
 			connection.close();
 		} catch (SQLException e) {
@@ -116,7 +120,9 @@ public class MenuDAOImpl implements MenuDAO {
 				int stok = rs.getInt("stok");
 				String jenis = rs.getString("jenis_id_jenis");
 				System.out.println("\nNama menu: " + nama_menu);
-				m = new Menu(id, nama_menu, harga, estimasi_waktu, stok, jenis);
+				JenisMenu jenisMenu= new JenisMenu();
+				jenisMenu.setId_jenis(jenis);
+				m = new Menu(id, nama_menu, harga, estimasi_waktu, stok, jenisMenu);
 				}
 				connection.close();
 			} catch (SQLException e) {
@@ -129,6 +135,42 @@ public class MenuDAOImpl implements MenuDAO {
 	public List<Menu> searchList(String nama_menu, JenisMenu jenis) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getLastId() {
+		// TODO Auto-generated method stub
+		int hasil = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement id = connection.prepareCall("{? = call getLastIDMenu()}");
+			
+			//set value to in parameter
+			id.registerOutParameter(1, Types.INTEGER);
+			
+			id.executeUpdate();
+			hasil = id.getInt(1);
+			connection.close();  
+			
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+		
+		return hasil;
 	}
 
 }

@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
@@ -33,11 +35,10 @@ public class DiskonDAOImpl implements DiskonDAO{
 			//create callable statement
 			CallableStatement createDiskon = connection.prepareCall("{call create_diskon(?,?,?,?)}");
 			
-			java.util.Date date = new java.util.Date();
 			//set value to in parameter
 			createDiskon.setInt(1, d.getPotongan());
-			createDiskon.setTime(2, new Time(date.getTime()));
-			createDiskon.setTime(3, new Time(date.getTime()));
+			createDiskon.setTimestamp(2, d.getTanggal_mulai());
+			createDiskon.setTimestamp(3, d.getTanggal_akhir());
 			createDiskon.setString(4, d.getMenu().getId_menu());
 			
 			createDiskon.executeUpdate();			
@@ -73,8 +74,8 @@ public class DiskonDAOImpl implements DiskonDAO{
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				int potongan = rs.getInt("potongan");
-				String tanggal_mulai = rs.getString("tanggal_mulai");
-				String tanggal_akhir = rs.getString("tanggal_akhir");
+				Timestamp tanggal_mulai = rs.getTimestamp("tanggal_mulai");
+				Timestamp tanggal_akhir = rs.getTimestamp("tanggal_akhir");
 				String menu_id_menu = rs.getString("menu_id_menu");
 				Menu menu = new Menu();
 				menu.setId_menu(menu_id_menu);

@@ -44,12 +44,12 @@ public class PelangganServlet extends HttpServlet {
 		String tanggal = request.getParameter("tanggal");
 		
 		// add data pelanggan
-		PelangganDAOImpl pelangganDAO = new PelangganDAOImpl();;
+		PelangganDAOImpl pelangganDAO = new PelangganDAOImpl();
 		int id = pelangganDAO.getLastId() + 1;
 		String idPelanggan = "PL" + String.format("%03d", id);
 		Pelanggan p = new Pelanggan(idPelanggan, nama_pelanggan, no_telp);
 		pelangganDAO.addPelanggan(p);
-		
+	
 		HttpSession session = request.getSession();
 
 		response.sendRedirect("/RestoranWeb/views/restoran/pesanan/form_pesanan_menu.jsp?id_pelanggan="+idPelanggan);

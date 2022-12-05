@@ -372,7 +372,7 @@
 	                		<p class="card-title">Data Reservasi</p>
 	                	</div>
 	                	<div class="col-md-1">
-	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="" href="/RestoranWeb/views/restoran/reservasi/form_reservasi.jsp"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-add" ></i>
 	                      	</button></a>
 	                	</div>
@@ -386,8 +386,6 @@
 		                          <th>Id Reservasi</th>
 		                          <th>Id Pesanan</th>
 		                          <th>Waktu</th>
-		                          <th>Status</th>
-		                          <th>Proses</th>
 		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
@@ -399,9 +397,7 @@
 		                          <td><%= r.getId_reservasi() %></td>
 		                          <td><%= r.getId_pesanan() %></td>
 		                          <td><%= r.getWaktu() %></td>
-		                          <td>Status</td>
 		                          <!-- <td><label class="badge badge-danger">Pending</label></td> --> 
-		                          <td><a class="" href="#"><i class="fa fa-check"></i></a></td>
 		                          <td><a class="" href="#"><i class="fa fa-edit" style="margin-right: 30%;"></i></a>
 		                              <a class="" href="#"><i class="fa fa-trash"></i></a></td>
 		                        </tr>

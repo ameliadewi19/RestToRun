@@ -12,6 +12,10 @@ public class Reservasi {
 		this.id_pesanan = id_pesanan;
 	}
 
+	public Reservasi() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId_reservasi() {
 		return id_reservasi;
 	}

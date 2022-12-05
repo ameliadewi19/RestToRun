@@ -6,20 +6,20 @@ public class Menu {
 	private int harga;
 	private int estimasi_waktu;
 	private int stok;
-	private String id_jenis;
+	private JenisMenu jenis_menu;
 	
-	public Menu(String id_menu, String nama_menu, int harga, int estimasi_waktu, int stok, String id_jenis) {
+	public Menu(String id_menu, String nama_menu, int harga, int estimasi_waktu, int stok, JenisMenu jenis_menu) {
 		super();
 		this.id_menu = id_menu;
 		this.nama_menu = nama_menu;
 		this.harga = harga;
 		this.estimasi_waktu = estimasi_waktu;
 		this.stok = stok;
-		this.id_jenis = id_jenis;
+		this.jenis_menu = jenis_menu;
 	}
 
 	public Menu() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getId_menu() {
@@ -62,12 +62,11 @@ public class Menu {
 		this.stok = stok;
 	}
 
-	public String getId_jenis() {
-		return id_jenis;
+	public JenisMenu getJenis_menu() {
+		return jenis_menu;
 	}
 
-	public void setId_jenis(String id_jenis) {
-		this.id_jenis = id_jenis;
-	}
-	
+	public void setJenis_menu(JenisMenu jenis_menu) {
+		this.jenis_menu = jenis_menu;
+	}	
 }

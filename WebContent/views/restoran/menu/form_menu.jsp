@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="model.Pesanan"%>
+<%@page import="model.JenisMenu"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.PesananDAOImpl"%>
+<%@page import="dao.JenisMenuDAOImpl"%>
 <%@page import="java.text.NumberFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -353,6 +353,12 @@
           </li>
         </ul>
       </nav>
+      <%
+			JenisMenuDAOImpl jenisMenuDAO = new JenisMenuDAOImpl();
+      	
+			NumberFormat nf = NumberFormat.getInstance();
+			nf.setMinimumFractionDigits(0);
+		%>
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -361,135 +367,61 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Menu</h4>
-                  <form class="form-sample">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/MenuServlet">
                     <p class="card-description">
-                      Personal info
+                      Data Menu
                     </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Menu</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Jenis</label>
-                          <div class="col-sm-8">
-                            <select class="form-control">
-                              <option>J001</option>
-                              <option>J002</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nama Menu</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control"/>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama_menu">
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Harga</label>
-                          <div class="col-sm-10">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-primary text-white">Rp.</span>
-                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                              <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Estimasi Waktu</label>
+                          <label class="col-sm-2 col-form-label">Harga Menu</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" name="harga_menu">
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Stok</label>
+                          <label class="col-sm-2 col-form-label">Estimasi Waktu</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control" name="estimasi">
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                          <label class="col-sm-2 col-form-label">Stok</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="stok">
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
+                          <label class="col-sm-2 col-form-label">Id Jenis</label>
+                          <div class="col-sm-8">
+                            <select class="form-control" name="jenis_menu">
+                            <%	for (JenisMenu jenis : jenisMenuDAO.getList()) {
+								%>
+								<pg:item>
+                              <option value="<%= jenis.getId_jenis() %>"><%= jenis.getNama_jenis() %></option>
+                              </pg:item>
+		                        <%
+									}
+										
+								%>
                             </select>
                           </div>
                         </div>
+                        <button class="btn btn-success mr-2">Tambah Menu</button>
                       </div>
                     </div>
                   </form>

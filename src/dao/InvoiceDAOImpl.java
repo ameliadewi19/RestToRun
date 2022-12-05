@@ -126,5 +126,37 @@ public class InvoiceDAOImpl implements InvoiceDAO{
 		
 		return hasil;
 	}
+
+	@Override
+	public void updateStatus(String idin) {
+		// TODO Auto-generated method stub
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement id = connection.prepareCall("{call kasir_update_pembayaran(?)}");
+			
+			//set value to in parameter
+			id.setString(1, idin);;
+			
+			id.executeUpdate();
+			connection.close();  
+			
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+	}
 	
 }

@@ -7,13 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
 import model.InvoiceView;
 import model.Reservasi;
 
-public class ReservasiDAOImpl {
+public class ReservasiDAOImpl implements ReservasiDAO{
 	public void addReservasi(Reservasi r) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -26,16 +27,15 @@ public class ReservasiDAOImpl {
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createPesanan = connection.prepareCall("{call create_reservasi(?,?,?,?,?)}");
+			CallableStatement createReservasi = connection.prepareCall("{call create_reservasi(?,?,?)}");
 			
 			java.util.Date date = new java.util.Date();
 			//set value to in parameter
-//			createPesanan.setString(1, "Belum Diverifikasi");
-//			createPesanan.setTimestamp(2, new Timestamp(date.getTime()));
-//			createPesanan.setString(3, p.getId_pelanggan());
-//			createPesanan.setInt(4, p.getNo_antrian());
+			createReservasi.setString(1, r.getId_reservasi());
+			createReservasi.setString(2, r.getWaktu());
+			createReservasi.setString(3, r.getId_pesanan());
 			
-			createPesanan.executeUpdate();			
+			createReservasi.executeUpdate();			
 			connection.close();  
 			
 			}catch(Exception e){ 
@@ -76,4 +76,41 @@ public class ReservasiDAOImpl {
 		}
 		return list;
 	}
+
+	@Override
+	public int getLastId() {
+		int hasil = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		try {			
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			//create callable statement
+			CallableStatement id = connection.prepareCall("{? = call getLastIDReservasi()}");
+			
+			//set value to in parameter
+			id.registerOutParameter(1, Types.INTEGER);
+			
+			id.executeUpdate();
+			hasil = id.getInt(1);
+			connection.close();  
+			
+			}catch(Exception e){ 
+				e.printStackTrace();
+			}
+		if (connection != null) {
+			System.out.println("\nSuccessfullly connected to Oracle DB");
+		} else {
+			System.out.println("\nFailed to connect to Oracle DB");
+		}
+		
+		return hasil;
+	}
+	
+	
 }

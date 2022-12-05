@@ -29,13 +29,12 @@ public class PemasokDAOImpl implements PemasokDAO{
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createSuplier = connection.prepareCall("{call create_pesanan(?,?,?)}");
+			CallableStatement createSuplier = connection.prepareCall("{call create_suplier(?,?)}");
 			
 			java.util.Date date = new java.util.Date();
 			//set value to in parameter
-			createSuplier.setString(1, s.getId_suplier());
-			createSuplier.setString(2, s.getNama());
-			createSuplier.setString(3, s.getAlamat());
+			createSuplier.setString(1, s.getNama());
+			createSuplier.setString(2, s.getAlamat());
 			
 			createSuplier.executeUpdate();			
 			connection.close();  

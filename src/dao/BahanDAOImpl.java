@@ -27,13 +27,11 @@ public class BahanDAOImpl implements BahanDAO{
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
 			
 			//create callable statement
-			CallableStatement createBahan = connection.prepareCall("{call create_bahan_baku(?,?,?)}");
+			CallableStatement createBahan = connection.prepareCall("{call create_bahan_baku(?,?)}");
 			
-			java.util.Date date = new java.util.Date();
 			//set value to in parameter
-			createBahan.setString(1, b.getId_bahan());
-			createBahan.setString(2, b.getNama_bahan());
-			createBahan.setInt(3, b.getStok());
+			createBahan.setString(1, b.getNama_bahan());
+			createBahan.setInt(2, b.getStok());
 			
 			createBahan.executeUpdate();			
 			connection.close();  

@@ -1,12 +1,14 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Diskon {
 	private int potongan;
-	private String tanggal_mulai;
-	private String tanggal_akhir;
+	private Timestamp tanggal_mulai;
+	private Timestamp tanggal_akhir;
 	private Menu menu;
 	
-	public Diskon(int potongan, String tanggal_mulai, String tanggal_akhir, Menu menu) {
+	public Diskon(int potongan, Timestamp tanggal_mulai, Timestamp tanggal_akhir, Menu menu) {
 		super();
 		this.potongan = potongan;
 		this.tanggal_mulai = tanggal_mulai;
@@ -22,19 +24,19 @@ public class Diskon {
 		this.potongan = potongan;
 	}
 
-	public String getTanggal_mulai() {
+	public Timestamp getTanggal_mulai() {
 		return tanggal_mulai;
 	}
 
-	public void setTanggal_mulai(String tanggal_mulai) {
+	public void setTanggal_mulai(Timestamp tanggal_mulai) {
 		this.tanggal_mulai = tanggal_mulai;
 	}
 
-	public String getTanggal_akhir() {
+	public Timestamp getTanggal_akhir() {
 		return tanggal_akhir;
 	}
 
-	public void setTanggal_akhir(String tanggal_akhir) {
+	public void setTanggal_akhir(Timestamp tanggal_akhir) {
 		this.tanggal_akhir = tanggal_akhir;
 	}
 
@@ -44,5 +46,5 @@ public class Diskon {
 
 	public void setMenu(Menu menu) {
 		this.menu = menu;
-	}	
+	}
 }

@@ -79,4 +79,33 @@ public class JenisMenuDAOImpl implements JenisMenuDAO{
 		return list;
 	}
 
+	@Override
+	public List<String> getListIDJenis() {
+		// TODO Auto-generated method stub
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+		String sql = "select id_jenis from jenis_menu";
+		List<String> list = new ArrayList<String>();
+		try {
+			//establish the connection
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","restaurant","restaurant");
+			
+			PreparedStatement ps = (PreparedStatement) connection
+					.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String id_jenis = rs.getString("id_jenis");
+				list.add(id_jenis);
+			}
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

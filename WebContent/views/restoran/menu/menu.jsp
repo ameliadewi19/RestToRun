@@ -371,7 +371,7 @@
 	                		<p class="card-title">Data Menu</p>
 	                	</div>
 	                	<div class="col-md-1">
-	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="" href="/RestoranWeb/views/restoran/menu/form_menu.jsp"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-add" ></i>
 	                      	</button></a>
 	                	</div>
@@ -393,11 +393,12 @@
 		                      </thead>
 		                      <tbody>   
 		                      <%	for (Menu m : menuDAO.getList()) {
+		                    	  	System.out.println(m.getId_menu());
 								%>    
 								<pg:item>
 		                        <tr>
 		                          <td><%= m.getId_menu() %></td>
-		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getJenis_menu().getId_jenis() %></td>
 		                          <td><%= m.getNama_menu() %></td>
 		                          <td><%= m.getHarga() %></td>
 		                          <td><%= m.getEstimasi_waktu() %></td>

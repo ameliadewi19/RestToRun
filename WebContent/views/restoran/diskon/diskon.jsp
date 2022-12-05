@@ -371,7 +371,7 @@
 	                		<p class="card-title">Data Diskon</p>
 	                	</div>
 	                	<div class="col-md-1">
-	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="" href="/RestoranWeb/views/restoran/diskon/form_diskon.jsp"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-add" ></i>
 	                      	</button></a>
 	                	</div>
@@ -392,10 +392,11 @@
 		                      <tbody>   
 		                      <%
 		                      		for (Diskon d : diskonDAO.getList()) {
+		                      		System.out.println(d.getTanggal_mulai());
 							  %>    
 								<pg:item>
 		                        <tr>
-		                          <td><%= d.getMenu().getId_jenis() %></td>
+		                          <td><%= d.getMenu().getId_menu() %></td>
 		                          <td><%= d.getTanggal_mulai() %></td>
 		                          <td><%= d.getTanggal_akhir() %></td>
 		                          <td><%= d.getPotongan() %></td>

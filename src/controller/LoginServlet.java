@@ -77,8 +77,21 @@ public class LoginServlet extends HttpServlet {
 	            //setting cookie to expiry in 30 mins
 	            loginCookie.setMaxAge(30*60);
 	            response.addCookie(loginCookie);
-	            response.sendRedirect("IndexServlet");
-				url = "/Index";
+	            
+	            String jenis = jenisUser.replaceAll("\\s", "");
+            	if(jenis.equals("mnjr")) {
+            		response.sendRedirect("/RestoranWeb/views/restoran/index.jsp");
+	    	    } else if (jenis.equals("plyn")){
+	    	    	response.sendRedirect("/RestoranWeb/views/pelayan/index.jsp");
+	    	    } else if (jenis.equals("ksr")){
+	    	    	response.sendRedirect("/RestoranWeb/views/kasir/index.jsp");
+	    	    } else if (jenis.equals("koki")){
+	    	    	response.sendRedirect("/RestoranWeb/views/koki/index.jsp");
+	    	    } else if (jenis.equals("stfgdg")){
+	    	    	response.sendRedirect("/RestoranWeb/views/staf_gudang/index.jsp");
+	    	    }
+	            
+//				url = "/Index";
 			} else {
 				url = "/login.jsp";
 				RequestDispatcher rd = getServletContext()

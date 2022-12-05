@@ -361,137 +361,43 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Diskon</h4>
-                  <form class="form-sample">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/DiskonServlet">
                     <p class="card-description">
                       Personal info
                     </p>
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Menu</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" disabled/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Id Jenis</label>
-                          <div class="col-sm-8">
-                            <select class="form-control">
-                              <option>J001</option>
-                              <option>J002</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Nama Menu</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control"/>
+                          <label class="col-sm-2 col-form-label">Id Menu</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="idmenu">
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Harga</label>
-                          <div class="col-sm-10">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text bg-primary text-white">Rp.</span>
-                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                              <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
-                              </div>
-                            </div>
+                          <label class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                          <div class="col-sm-8">
+                            <input type="date" class="form-control" class='input-group date' id='datetimepicker1' name="tanggalmulai">
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Estimasi Waktu</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="text" id="time"/>
+                          <label class="col-sm-2 col-form-label">Tanggal Akhir</label>
+                          <div class="col-sm-8">
+                            <input type="date" class="form-control" class='input-group date' id='datetimepicker1' name="tanggalakhir">
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
+                      <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Stok</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="text" id="stok"/>
+                          <label class="col-sm-2 col-form-label">Potongan</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="potongan">
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <p class="card-description">
-                      Address
-                    </p>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 1</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">State</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Address 2</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Postcode</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">City</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Country</label>
-                          <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>America</option>
-                              <option>Italy</option>
-                              <option>Russia</option>
-                              <option>Britain</option>
-                            </select>
-                          </div>
-                        </div>
+                        <button class="btn btn-success mr-2">Tambah Diskon</button>
                       </div>
                     </div>
                   </form>

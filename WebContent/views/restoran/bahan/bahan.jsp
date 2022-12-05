@@ -371,7 +371,7 @@
 	                		<p class="card-title">Data Bahan</p>
 	                	</div>
 	                	<div class="col-md-1">
-	                		<a class="" href="#"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="" href="/RestoranWeb/views/restoran/bahan/form_bahan.jsp"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-add" ></i>
 	                      	</button></a>
 	                	</div>

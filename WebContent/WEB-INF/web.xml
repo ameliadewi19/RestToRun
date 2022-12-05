@@ -94,4 +94,40 @@
     <servlet-name>KeranjangServlet</servlet-name>
     <url-pattern>/KeranjangServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ReservasiServlet</servlet-name>
+	<servlet-class>controller.ReservasiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReservasiServlet</servlet-name>
+    <url-pattern>/ReservasiServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>KeranjangReservasiServlet</servlet-name>
+	<servlet-class>controller.KeranjangReservasiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeranjangReservasiServlet</servlet-name>
+    <url-pattern>/KeranjangReservasiServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ProsesPesananServlet</servlet-name>
+	<servlet-class>controller.ProsesPesananServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProsesPesananServlet</servlet-name>
+    <url-pattern>/ProsesPesananServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ProsesPembayaranServlet</servlet-name>
+	<servlet-class>controller.ProsesPembayaranServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProsesPembayaranServlet</servlet-name>
+    <url-pattern>/ProsesPembayaranServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

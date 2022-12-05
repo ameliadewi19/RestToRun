@@ -10,4 +10,6 @@ public interface InvoiceDAO {
 	public List<Invoice> getList();
 	
 	public int getLastId();
+	
+	public void updateStatus(String idin);
 }

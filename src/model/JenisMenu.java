@@ -12,6 +12,11 @@ public class JenisMenu {
 	}
 
 
+	public JenisMenu() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getId_jenis() {
 		return id_jenis;
 	}
