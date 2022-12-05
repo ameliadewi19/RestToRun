@@ -340,7 +340,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Pembayaran</h4>
-                  <form class="form-sample" method="POST" action="/RestoranWeb/PembayaranServlet">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PembayaranServlet?command=kasir_konfirmasi">
                        	<div class="form-group row">
                           <label class="col-sm-2 col-form-label">Metode Pembayaran</label>
                           <div class="col-sm-10">

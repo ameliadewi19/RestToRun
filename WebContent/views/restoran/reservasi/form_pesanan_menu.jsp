@@ -320,6 +320,18 @@
             
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../menyuplai/suplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../kelolaSuplai/kelolaSuplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Kelola Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
@@ -342,7 +354,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href=""../suplier/suplier.jsp"" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Data Supllier</span>
+              <span class="menu-title">Data Suplier</span>
             </a>
           </li>
           <li class="nav-item">
@@ -411,7 +423,7 @@
 								<pg:item>
 		                        <tr>
 		                          <td><%= m.getId_menu() %></td>
-		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getJenis_menu().getId_jenis() %></td>
 		                          <td><%= m.getNama_menu() %></td>
 		                          <td><%= m.getHarga() %></td>
 		                          <td><%= m.getEstimasi_waktu() %></td>

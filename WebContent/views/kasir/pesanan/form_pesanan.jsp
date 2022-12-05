@@ -327,7 +327,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Pesanan</h4>
-                  <form class="form-sample" method="POST" action="/RestoranWeb/PelangganServlet">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PelangganServlet?command=kasir_konfirmasi">
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nama Pelanggan</label>
                           <div class="col-sm-10">

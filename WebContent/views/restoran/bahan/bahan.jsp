@@ -318,6 +318,18 @@
             
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../menyuplai/suplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../kelolaSuplai/kelolaSuplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Kelola Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>

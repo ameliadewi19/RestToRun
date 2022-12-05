@@ -342,7 +342,7 @@
                 <div class="row">
             	   <div class="col-6 grid-margin">
 	                  <h4 class="card-title">Tambah Keranjang</h4>
-	                  <form class="form-sample" method="POST" action="/RestoranWeb/KeranjangServlet">
+	                  <form class="form-sample" method="POST" action="/RestoranWeb/KeranjangServlet?command=kasir_konfirmasi">
 	                        <div class="form-group row">
 	                          <label class="col-sm-2 col-form-label">Id Menu</label>
 	                          <div class="col-sm-10">
@@ -384,7 +384,7 @@
 								<pg:item>
 		                        <tr>
 		                          <td><%= m.getId_menu() %></td>
-		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getJenis_menu().getId_jenis() %></td>
 		                          <td><%= m.getNama_menu() %></td>
 		                          <td><%= m.getHarga() %></td>
 		                          <td><%= m.getEstimasi_waktu() %></td>
@@ -418,7 +418,7 @@
 	                		<h4 class="card-title">Tabel Keranjang</h4>
 	                	</div>
 	                	<div class="col-1">
-	                		<a class="ml-4" href="/RestoranWeb/PesananServlet?command=konfirmasi&id_pelanggan=<%= id_plgn %>"><button type="button" class="btn btn-info btn-rounded btn-icon">
+	                		<a class="ml-4" href="/RestoranWeb/PesananServlet?command=kasir_konfirmasi&id_pelanggan=<%= id_plgn %>"><button type="button" class="btn btn-info btn-rounded btn-icon">
 	                        <i class="fa fa-check" ></i>
 	                      	</button></a>
 	                    </div>
@@ -434,7 +434,6 @@
 		                          <th>Id Pelanggan</th>
 		                          <th>Id Menu</th>
 		                          <th>Jumlah</th>
-		                          <th>Action</th>
 		                        </tr>
 		                      </thead>
 		                      <tbody>   
@@ -445,7 +444,6 @@
 		                          <td><%= k.getPelanggan().getId_pelanggan() %></td>
 		                          <td><%= k.getMenu().getId_menu() %></td>
 		                          <td><%= k.getJumlah() %></td>
-		                          <td>Aksi</td>
 		                        </tr>
 		                        </pg:item>
 								<%

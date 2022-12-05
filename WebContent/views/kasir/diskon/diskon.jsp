@@ -362,7 +362,7 @@
 							  %>    
 								<pg:item>
 		                        <tr>
-		                          <td><%= d.getMenu().getId_jenis() %></td>
+		                          <td><%= d.getMenu().getJenis_menu().getId_jenis() %></td>
 		                          <td><%= d.getTanggal_mulai() %></td>
 		                          <td><%= d.getTanggal_akhir() %></td>
 		                          <td><%= d.getPotongan() %></td>

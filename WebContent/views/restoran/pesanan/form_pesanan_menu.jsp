@@ -301,23 +301,35 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../reservasi/reservasi.jsp">
+            <a class="nav-link" href="../reservasi/reservasi.jsp">
               <i class="icon-grid-2 menu-icon"></i>
               <span class="menu-title">Data Reservasi</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../menu/menu.jsp" aria-expanded="false" aria-controls="error">
+            <a class="nav-link" href="../menu/menu.jsp" >
               <i class="icon-ban menu-icon"></i>
               <span class="menu-title">Data Menu</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="../bahan/baku.jsp" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" href="../bahan/bahan.jsp">
               <i class="icon-contract menu-icon"></i>
               <span class="menu-title">Data Bahan Baku</span>
             </a>
             
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../menyuplai/suplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../kelolaSuplai/kelolaSuplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Kelola Suplai</span>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -327,26 +339,27 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../pegawai/pegawai.jsp">Pelayan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.jsp">Koki</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/pelayan.jsp">Pelayan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/koki.jsp">Koki</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/kasir.jsp">Kasir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../pegawai/stafGudang.jsp">Staf Gudang</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../pembayaran/pembayaran.jsp"" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link" href="../pembayaran/pembayaran.jsp">
               <i class="icon-columns menu-icon"></i>
               <span class="menu-title">Data Pembayaran</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href=""../suplier/suplier.jsp"" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="../pemasok/pemasok.jsp">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Data Supllier</span>
+              <span class="menu-title">Data Suplier</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""../diskon/diskon.jsp"">
+            <a class="nav-link" href="../diskon/diskon.jsp">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Diskon</span>
             </a>
@@ -369,7 +382,7 @@
                 <div class="row">
             	   <div class="col-6 grid-margin">
 	                  <h4 class="card-title">Tambah Keranjang</h4>
-	                  <form class="form-sample" method="POST" action="/RestoranWeb/KeranjangServlet">
+	                  <form class="form-sample" method="POST" action="/RestoranWeb/KeranjangServlet?command=konfirmasi">
 	                        <div class="form-group row">
 	                          <label class="col-sm-2 col-form-label">Id Menu</label>
 	                          <div class="col-sm-10">
@@ -411,7 +424,7 @@
 								<pg:item>
 		                        <tr>
 		                          <td><%= m.getId_menu() %></td>
-		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getJenis_menu().getId_jenis() %></td>
 		                          <td><%= m.getNama_menu() %></td>
 		                          <td><%= m.getHarga() %></td>
 		                          <td><%= m.getEstimasi_waktu() %></td>

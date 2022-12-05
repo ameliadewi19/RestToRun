@@ -1,15 +1,15 @@
 package model;
 
 public class Pengguna {
-	private char id_pengguna;
+	private String id_pengguna;
 	private String password;
-	private char id_jenis;
+	private String id_jenis;
 	private String email;
 	private String nama;
 	private char jenis_kelamin;
 	private String alamat;
 	
-	public Pengguna(char id_pengguna, String password, char id_jenis, String email, String nama, char jenis_kelamin,
+	public Pengguna(String id_pengguna, String password, String id_jenis, String email, String nama, char jenis_kelamin,
 			String alamat) {
 		super();
 		this.id_pengguna = id_pengguna;
@@ -21,11 +21,15 @@ public class Pengguna {
 		this.alamat = alamat;
 	}
 
-	public char getId_pengguna() {
+	public Pengguna() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getId_pengguna() {
 		return id_pengguna;
 	}
 
-	public void setId_pengguna(char id_pengguna) {
+	public void setId_pengguna(String id_pengguna) {
 		this.id_pengguna = id_pengguna;
 	}
 
@@ -37,11 +41,11 @@ public class Pengguna {
 		this.password = password;
 	}
 
-	public char getId_jenis() {
+	public String getId_jenis() {
 		return id_jenis;
 	}
 
-	public void setId_jenis(char id_jenis) {
+	public void setId_jenis(String id_jenis) {
 		this.id_jenis = id_jenis;
 	}
 

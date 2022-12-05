@@ -372,7 +372,7 @@
 								<pg:item>
 		                        <tr>
 		                          <td><%= m.getId_menu() %></td>
-		                          <td><%= m.getId_jenis() %></td>
+		                          <td><%= m.getJenis_menu().getId_jenis() %></td>
 		                          <td><%= m.getNama_menu() %></td>
 		                          <td><%= m.getHarga() %></td>
 		                          <td><%= m.getEstimasi_waktu() %></td>

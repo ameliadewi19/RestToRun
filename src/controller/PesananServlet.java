@@ -53,22 +53,30 @@ public class PesananServlet extends HttpServlet{
 		
 		System.out.println(command);
 		
+		// add data pesanan
+					PesananDAOImpl pesananDAO = new PesananDAOImpl();
+					java.sql.Timestamp tgl = new java.sql.Timestamp(System.currentTimeMillis());
+					int no_antri = pesananDAO.getNoAntri();
+					int id = pesananDAO.getLastId() + 1;
+					String idPesanan = "PS" + String.format("%03d", id);
+					Pesanan ps = new Pesanan(idPesanan, "Belum Diverifikasi", tgl, id_pelanggan, no_antri);
+					
+					pesananDAO.addPesanan(ps);
+		
 		if (command.equals("konfirmasi")) {
-			// add data pesanan
-			PesananDAOImpl pesananDAO = new PesananDAOImpl();
-			java.sql.Timestamp tgl = new java.sql.Timestamp(System.currentTimeMillis());
-			int no_antri = pesananDAO.getNoAntri();
-			int id = pesananDAO.getLastId() + 1;
-			String idPesanan = "PS" + String.format("%03d", id);
-			Pesanan ps = new Pesanan(idPesanan, "Belum Diverifikasi", tgl, id_pelanggan, no_antri);
 			
-			pesananDAO.addPesanan(ps);
 			
 			HttpSession session = request.getSession();
 
 			response.sendRedirect("/RestoranWeb/views/restoran/pembayaran/form_pembayaran.jsp?id_pesanan="+idPesanan);
-		} else if (command.equals("batal")){
-			
+		} else if (command.equals("pelanggan_konfirmasi")){
+			HttpSession session = request.getSession();
+
+			response.sendRedirect("/RestoranWeb/views/pelanggan/pembayaran.jsp?id_pesanan="+idPesanan);
+		} else if (command.equals("kasir_konfirmasi")){
+			HttpSession session = request.getSession();
+
+			response.sendRedirect("/RestoranWeb/views/kasir/pembayaran/form_pembayaran.jsp?id_pesanan="+idPesanan);
 		}
 		
 	}

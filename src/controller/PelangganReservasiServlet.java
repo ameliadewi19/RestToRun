@@ -39,20 +39,27 @@ public class PelangganReservasiServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String command = request.getParameter("command");
 		String nama_pelanggan = request.getParameter("nama");
 		String no_telp = request.getParameter("notelp");
 		String tanggal = request.getParameter("tanggal");
 		
 		// add data pelanggan
+		
 		PelangganDAOImpl pelangganDAO = new PelangganDAOImpl();;
 		int id = pelangganDAO.getLastId() + 1;
 		String idPelanggan = "PL" + String.format("%03d", id);
 		Pelanggan p = new Pelanggan(idPelanggan, nama_pelanggan, no_telp);
 		pelangganDAO.addPelanggan(p);
 		
-		HttpSession session = request.getSession();
-
-		response.sendRedirect("/RestoranWeb/views/restoran/reservasi/form_pesanan_menu.jsp?id_pelanggan="+idPelanggan);
+		if (command.equals("konfirmasi")) {
+		
+			HttpSession session = request.getSession();
+			response.sendRedirect("/RestoranWeb/views/restoran/reservasi/form_pesanan_menu.jsp?id_pelanggan="+idPelanggan);
+		} else if (command.equals("pelanggan_konfirmasi")) {
+			HttpSession session = request.getSession();
+			response.sendRedirect("/RestoranWeb/views/pelanggan/cartreservasi.jsp?id_pelanggan="+idPelanggan);
+		} 
 	}
 
 }

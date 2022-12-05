@@ -45,6 +45,7 @@ public class KeranjangReservasiServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
+		String command = request.getParameter("command");
 		String id_pelanggan = request.getParameter("id_pelanggan");
 		String id_menu = request.getParameter("id_menu");
 		String jumlah = request.getParameter("jumlah");
@@ -61,11 +62,16 @@ public class KeranjangReservasiServlet extends HttpServlet {
 		keranjangDAO.addKeranjang(k);
 		HttpSession session = request.getSession();
 		
+		if (command.equals("konfirmasi")) {
 		
-		System.out.println(id_pelanggan);
-
-		response.sendRedirect("/RestoranWeb/views/restoran/reservasi/form_pesanan_menu.jsp?id_pelanggan="+id_pelanggan);
-		
+			System.out.println(id_pelanggan);
+	
+			response.sendRedirect("/RestoranWeb/views/restoran/reservasi/form_pesanan_menu.jsp?id_pelanggan="+id_pelanggan);
+		} else if (command.equals("pelanggan_konfirmasi")) {
+			System.out.println(id_pelanggan);
+			
+			response.sendRedirect("/RestoranWeb/views/pelanggan/cartreservasi.jsp?id_pelanggan="+id_pelanggan);
+		}
 //		if (command.equals("addCart")) {
 //			Menu m = new Menu(id_menu, "", 0, 0, 0, "");
 //			addToCart(m);

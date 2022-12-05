@@ -45,6 +45,7 @@ public class PembayaranServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String command = request.getParameter("command");
 		String metode = request.getParameter("metode");
 		String jumlah = request.getParameter("jumlah");
 		String email = request.getParameter("email");
@@ -73,9 +74,16 @@ public class PembayaranServlet extends HttpServlet {
 		
 		invoiceDAO.addInvoice(i);
 		
-		HttpSession session = request.getSession();
-
-		response.sendRedirect("/RestoranWeb/views/restoran/pembayaran/pembayaran.jsp");
+		
+		if (command.equals("konfirmasi")) {
+			HttpSession session = request.getSession();
+	
+			response.sendRedirect("/RestoranWeb/views/restoran/pembayaran/pembayaran.jsp");
+		} else if (command.equals("kasir_konfirmasi")) {
+			HttpSession session = request.getSession();
+			
+			response.sendRedirect("/RestoranWeb/views/kasir/pembayaran/pembayaran.jsp");
+		}
 	}
 
 }

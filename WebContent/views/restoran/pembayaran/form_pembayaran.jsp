@@ -326,6 +326,18 @@
             
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="../menyuplai/suplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../kelolaSuplai/kelolaSuplai.jsp">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Data Kelola Suplai</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Data Pegawai</span>
@@ -367,7 +379,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Data Pembayaran</h4>
-                  <form class="form-sample" method="POST" action="/RestoranWeb/PembayaranServlet">
+                  <form class="form-sample" method="POST" action="/RestoranWeb/PembayaranServlet?command=konfirmasi">
                        	<div class="form-group row">
                           <label class="col-sm-2 col-form-label">Metode Pembayaran</label>
                           <div class="col-sm-10">

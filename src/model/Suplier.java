@@ -12,6 +12,10 @@ public class Suplier {
 		this.alamat = alamat;
 	}
 
+	public Suplier() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId_suplier() {
 		return id_suplier;
 	}

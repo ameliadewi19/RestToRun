@@ -90,7 +90,7 @@
                         <a class="nav-link" href="views/pelanggan/about.jsp">About</a>
                     </li>
                     <li class="nav-item">
-                              <a class="nav-link" href="views/pelanggan/cart.jsp">Cart</a>
+                              <a class="nav-link" href="views/pelanggan/pesanan.jsp">Pesanan</a>
                     </li>
                 </div>
             </ul>

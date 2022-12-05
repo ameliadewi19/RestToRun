@@ -97,8 +97,8 @@
                               <a class="nav-link" href="about.jsp">About</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="cart.jsp">Cart</a>
-                          </li>
+                              <a class="nav-link" href="pesanan.jsp">Pesanan</a>
+                    	  </li>
                       </div>
                   </ul>
                   
